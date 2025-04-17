@@ -1,0 +1,19 @@
+import React, { createContext } from "react";
+import { useAppState } from "./useAppState";
+import { Car } from "@/types/car";
+
+export interface AppContextType {
+  data: Car[];
+  add: (item: Car) => void;
+  set: (newData: Car[]) => void;
+}
+
+const AppContext = createContext<AppContextType | undefined>(undefined);
+
+const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const appState = useAppState();
+
+  return <AppContext.Provider value={appState}>{children}</AppContext.Provider>;
+};
+
+export { AppProvider, AppContext };

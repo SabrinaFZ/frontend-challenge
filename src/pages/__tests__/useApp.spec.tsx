@@ -1,60 +1,67 @@
 import { renderHook, waitFor } from "@testing-library/react";
-import { describe, it, expect, afterEach, vi } from "vitest";
+import { describe, it, expect, afterEach, vi, beforeEach, Mock } from "vitest";
 import { useApp } from "../useApp";
+import axios from "axios";
+import { useAppContext } from "@/context/useAppContext";
+
+const mockedAxios = axios as unknown as {
+  get: ReturnType<typeof vi.fn>;
+};
 
 describe("useApp", () => {
+  const mockSet = vi.fn();
+  const mockData = [
+    {
+      id: 1,
+      model: "Golf",
+      year: 2020,
+      price: 20000,
+      engine: "1.5L",
+      transmission: "Manual",
+    },
+  ];
+
+  beforeEach(() => {
+    (useAppContext as unknown as Mock).mockReturnValue({
+      data: [],
+      set: mockSet,
+    });
+    vi.clearAllMocks();
+  });
+
   afterEach(() => {
     vi.restoreAllMocks();
   });
 
-  it("should fetch and return data successfully", async () => {
-    const mockData = [
-      {
-        id: 1,
-        model: "Golf",
-        year: 2020,
-        price: 20000,
-        engine: "1.5L",
-        transmission: "Manual",
-      },
-    ];
-
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValueOnce({
-        ok: true,
-        json: async () => mockData,
-      })
-    );
+  it("returns initial loading state", () => {
+    mockedAxios.get = vi.fn().mockResolvedValue({ data: [] });
 
     const { result } = renderHook(() => useApp());
 
     expect(result.current.loading).toBe(true);
-
-    await waitFor(() => {
-      expect(result.current.loading).toBe(false);
-    });
-
-    expect(result.current.data).toEqual(mockData);
     expect(result.current.error).toBeNull();
   });
 
-  it("should handle fetch errors", async () => {
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValueOnce({
-        ok: false,
-      })
-    );
+  it("fetches and sets data on success", async () => {
+    mockedAxios.get = vi.fn().mockResolvedValue({ data: mockData });
 
     const { result } = renderHook(() => useApp());
 
-    await waitFor(() => {
-      expect(result.current.loading).toBe(false);
-    });
+    await waitFor(() => expect(result.current.loading).toBe(false));
 
-    expect(result.current.data).toEqual([]);
+    expect(mockSet).toHaveBeenCalledWith(mockData);
+    expect(result.current.error).toBeNull();
+  });
+
+  it("handles fetch error correctly", async () => {
+    mockedAxios.get = vi.fn().mockRejectedValue(new Error("Network Error"));
+
+    const { result } = renderHook(() => useApp());
+
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
     expect(result.current.error).toBeInstanceOf(Error);
-    expect(result.current.error?.message).toBe("Network response was not ok");
+    expect(result.current.error?.message).toBe("Network Error");
+    expect(mockSet).not.toHaveBeenCalled();
   });
 });

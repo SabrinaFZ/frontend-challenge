@@ -1,30 +1,29 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import axios from "axios";
 import { Car } from "../types/car";
+import { useAppContext } from "@/context/useAppContext";
 
 export const useApp = () => {
-  const [data, setData] = useState<Car[]>([]);
+  const { data, set } = useAppContext();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setLoading(true);
+    setError(null);
     try {
-      const response = await fetch("http://localhost:3001/data");
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const result = await response.json();
-      setData(result);
-    } catch (error) {
-      setError(error as Error);
+      const response = await axios.get<Car[]>("http://localhost:3001/data");
+      set(response.data);
+    } catch (err) {
+      setError(err as Error);
     } finally {
       setLoading(false);
     }
-  };
+  }, [set]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return { data, loading, error };
 };

@@ -18,4 +18,9 @@ export default defineConfig({
     setupFiles: "./src/test/setup.ts",
     exclude: [...configDefaults.exclude],
   },
+  server: {
+    watch: {
+      ignored: ["**/data/db.json"],
+    },
+  },
 });

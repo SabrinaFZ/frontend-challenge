@@ -9,6 +9,7 @@ import {
 import { formatPrice } from "../utils/formatPrice";
 import { useApp } from "./useApp";
 import Layout from "../components/common/Layout";
+import { Add } from "./features/add/Add";
 
 function App() {
   const { data, loading, error } = useApp();
@@ -27,6 +28,9 @@ function App() {
 
   return (
     <Layout>
+      <div className="mb-6 flex flex-col sm:flex-row gap-4">
+        <Add />
+      </div>
       <div className="border rounded-md">
         <Table>
           <TableHeader>
@@ -36,7 +40,7 @@ function App() {
               <TableHead>Year</TableHead>
               <TableHead>Price</TableHead>
               <TableHead>Engine</TableHead>
-              <TableHead>Transmision</TableHead>
+              <TableHead>Transmission</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -45,7 +49,7 @@ function App() {
                 <TableCell>{car.id}</TableCell>
                 <TableCell>{car.model}</TableCell>
                 <TableCell>{car.year}</TableCell>
-                <TableCell>{formatPrice(car.price)}</TableCell>
+                <TableCell>{formatPrice(Number(car.price))}</TableCell>
                 <TableCell>{car.engine}</TableCell>
                 <TableCell>{car.transmission}</TableCell>
               </TableRow>

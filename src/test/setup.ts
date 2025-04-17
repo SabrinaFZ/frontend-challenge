@@ -1,4 +1,8 @@
 import "@testing-library/jest-dom";
 import { vi } from "vitest";
 
-global.fetch = vi.fn();
+// Mocks
+vi.mock("axios");
+vi.mock("@/context/useAppContext", () => ({
+  useAppContext: vi.fn(),
+}));
