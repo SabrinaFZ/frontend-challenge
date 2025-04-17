@@ -36,7 +36,11 @@ export const Add = () => {
           <DialogHeader>
             <DialogTitle>Add New Item</DialogTitle>
           </DialogHeader>
-          <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
+          <form
+            name="add"
+            onSubmit={handleSubmit}
+            className="w-full max-w-lg mx-auto"
+          >
             <div className="flex flex-col gap-4 py-4">
               <div>
                 <Label htmlFor="model">Model</Label>
