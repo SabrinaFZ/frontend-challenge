@@ -9,7 +9,7 @@ import {
 import { formatPrice } from "../utils/formatPrice";
 import { useApp } from "./useApp";
 import Layout from "../components/common/Layout";
-import { Add } from "./Add";
+import { Add } from "./features/add/Add";
 
 function App() {
   const { data, loading, error } = useApp();
