@@ -29,6 +29,14 @@ export const useAdd = () => {
       try {
         await axios.post("http://localhost:3001/data", formData);
 
+        setFormData({
+          model: "",
+          year: "",
+          price: "",
+          engine: "",
+          transmission: "",
+        });
+
         return true;
       } catch (error) {
         console.error("Error submitting form:", error);
