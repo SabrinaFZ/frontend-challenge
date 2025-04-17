@@ -1,7 +1,10 @@
+import { useAppContext } from "@/context/useAppContext";
+import { Car } from "@/types/car";
 import axios from "axios";
 import { useCallback, useState } from "react";
 
 export const useAdd = () => {
+  const { add } = useAppContext();
   const [formData, setFormData] = useState({
     model: "",
     year: "",
@@ -27,7 +30,10 @@ export const useAdd = () => {
     async (e: React.FormEvent) => {
       e.preventDefault();
       try {
-        await axios.post("http://localhost:3001/data", formData);
+        const response = await axios.post<Car>(
+          "http://localhost:3001/data",
+          formData
+        );
 
         setFormData({
           model: "",
@@ -37,13 +43,15 @@ export const useAdd = () => {
           transmission: "",
         });
 
+        add(response.data);
+
         return true;
       } catch (error) {
         console.error("Error submitting form:", error);
         return false;
       }
     },
-    [formData]
+    [formData, add]
   );
 
   return {
