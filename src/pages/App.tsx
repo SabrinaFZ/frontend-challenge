@@ -5,10 +5,10 @@ import {
   TableHead,
   TableBody,
   TableCell,
-} from "./components/ui/table";
-import { formatPrice } from "./utils/formatPrice";
-import { useApp } from "./hooks/useApp";
-import Layout from "./components/common/Layout";
+} from "../components/ui/table";
+import { formatPrice } from "../utils/formatPrice";
+import { useApp } from "../hooks/useApp";
+import Layout from "../components/common/Layout";
 
 function App() {
   const { data, loading, error } = useApp();
