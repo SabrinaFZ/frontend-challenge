@@ -3,802 +3,242 @@
     {
       "id": "1",
       "model": "Amarok",
-      "year": 2022,
-      "price": 28249,
+      "year": "2022",
+      "price": "28249.00",
       "engine": "1.0L TSI",
       "transmission": "Single-speed"
     },
     {
       "id": "2",
       "model": "Arteon",
-      "year": 2023,
-      "price": 26100,
+      "year": "2023",
+      "price": "26100",
       "engine": "1.5L TSI",
       "transmission": "Manual"
     },
     {
       "id": "3",
       "model": "ID.4",
-      "year": 2022,
-      "price": 49783,
+      "year": "2022",
+      "price": "49783.50",
       "engine": "1.0L TSI",
       "transmission": "Single-speed"
     },
     {
       "id": "4",
       "model": "Amarok",
-      "year": 2021,
-      "price": 46774,
+      "year": "2021",
+      "price": "46774",
       "engine": "1.0L TSI",
       "transmission": "Single-speed"
     },
     {
       "id": "5",
       "model": "Golf GTI",
-      "year": 2021,
-      "price": 20857,
+      "year": "2021",
+      "price": "20857.99",
       "engine": "2.0L TDI",
       "transmission": "Single-speed"
     },
     {
       "id": "6",
       "model": "ID.5",
-      "year": 2024,
-      "price": 58003,
+      "year": "2024",
+      "price": "58003",
       "engine": "1.0L TSI",
       "transmission": "Automatic"
     },
     {
       "id": "7",
       "model": "ID.4",
-      "year": 2018,
-      "price": 44707,
+      "year": "2018",
+      "price": "44707.25",
       "engine": "1.5L TSI",
       "transmission": "Manual"
     },
     {
       "id": "8",
       "model": "T-Cross",
-      "year": 2022,
-      "price": 30180,
+      "year": "2022",
+      "price": "30180",
       "engine": "1.6L TDI",
       "transmission": "Manual"
     },
     {
       "id": "9",
       "model": "ID.5",
-      "year": 2020,
-      "price": 40305,
+      "year": "2020",
+      "price": "40305.75",
       "engine": "2.0L TDI",
       "transmission": "Manual"
     },
     {
       "id": "10",
       "model": "T-Cross",
-      "year": 2024,
-      "price": 27967,
+      "year": "2024",
+      "price": "27967",
       "engine": "Electric",
       "transmission": "Single-speed"
     },
     {
       "id": "11",
       "model": "Polo",
-      "year": 2018,
-      "price": 55514,
+      "year": "2018",
+      "price": "55514.50",
       "engine": "2.0L TSI",
       "transmission": "Single-speed"
     },
     {
       "id": "12",
       "model": "Passat",
-      "year": 2019,
-      "price": 54481,
+      "year": "2019",
+      "price": "54481",
       "engine": "1.0L TSI",
       "transmission": "Manual"
     },
     {
       "id": "13",
       "model": "Polo",
-      "year": 2020,
-      "price": 43313,
+      "year": "2020",
+      "price": "43313.99",
       "engine": "Electric",
       "transmission": "Single-speed"
     },
     {
       "id": "14",
       "model": "Caddy",
-      "year": 2024,
-      "price": 29013,
+      "year": "2024",
+      "price": "29013",
       "engine": "Electric",
       "transmission": "Single-speed"
     },
     {
       "id": "15",
       "model": "ID.4",
-      "year": 2019,
-      "price": 34359,
+      "year": "2019",
+      "price": "34359.50",
       "engine": "Electric",
       "transmission": "Single-speed"
     },
     {
       "id": "16",
       "model": "Touareg",
-      "year": 2024,
-      "price": 33609,
+      "year": "2024",
+      "price": "33609",
       "engine": "2.0L TDI",
       "transmission": "Automatic"
     },
     {
       "id": "17",
       "model": "Tiguan",
-      "year": 2023,
-      "price": 31564,
+      "year": "2023",
+      "price": "31564.75",
       "engine": "1.5L TSI",
       "transmission": "Manual"
     },
     {
       "id": "18",
       "model": "ID.4",
-      "year": 2023,
-      "price": 26059,
+      "year": "2023",
+      "price": "26059",
       "engine": "1.0L TSI",
       "transmission": "Single-speed"
     },
     {
       "id": "19",
       "model": "Multivan",
-      "year": 2019,
-      "price": 39230,
+      "year": "2019",
+      "price": "39230.50",
       "engine": "2.0L TDI",
       "transmission": "Single-speed"
     },
     {
       "id": "20",
       "model": "Golf GTI",
-      "year": 2023,
-      "price": 21585,
+      "year": "2023",
+      "price": "21585",
       "engine": "Electric",
       "transmission": "Single-speed"
     },
     {
-      "id": "21",
-      "model": "Tiguan",
-      "year": 2021,
-      "price": 32336,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "22",
-      "model": "ID.3",
-      "year": 2018,
-      "price": 55945,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "23",
-      "model": "ID.3",
-      "year": 2018,
-      "price": 34802,
-      "engine": "1.0L TSI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "24",
-      "model": "Polo",
-      "year": 2021,
-      "price": 41388,
-      "engine": "1.6L TDI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "25",
-      "model": "T-Roc",
-      "year": 2019,
-      "price": 55052,
-      "engine": "2.0L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "26",
-      "model": "Arteon",
-      "year": 2020,
-      "price": 41692,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "27",
-      "model": "ID.5",
-      "year": 2022,
-      "price": 26684,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "28",
-      "model": "Passat",
-      "year": 2018,
-      "price": 40270,
+      "id": "81f7",
+      "model": "Test",
+      "year": "2024",
+      "price": "27890.67",
       "engine": "2.0L TSI",
       "transmission": "Manual"
     },
     {
-      "id": "29",
-      "model": "Arteon",
-      "year": 2022,
-      "price": 50942,
-      "engine": "1.6L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "30",
-      "model": "Polo",
-      "year": 2021,
-      "price": 37557,
+      "id": "04ce",
+      "model": "Test",
+      "year": "2022",
+      "price": "28908.90",
       "engine": "1.5L TSI",
       "transmission": "Manual"
     },
     {
-      "id": "31",
-      "model": "T-Cross",
-      "year": 2023,
-      "price": 44757,
-      "engine": "1.6L TDI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "32",
-      "model": "Touareg",
-      "year": 2019,
-      "price": 45063,
-      "engine": "1.5L TSI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "33",
-      "model": "Passat",
-      "year": 2018,
-      "price": 50489,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "34",
-      "model": "Tiguan",
-      "year": 2023,
-      "price": 38209,
+      "id": "d76f",
+      "model": "Test",
+      "year": "2024",
+      "price": "28900.89",
       "engine": "1.5L TSI",
       "transmission": "Manual"
     },
     {
-      "id": "35",
-      "model": "Golf GTI",
-      "year": 2020,
-      "price": 28705,
-      "engine": "2.0L TSI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "36",
-      "model": "T-Roc",
-      "year": 2023,
-      "price": 42263,
-      "engine": "1.6L TDI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "37",
-      "model": "Golf",
-      "year": 2024,
-      "price": 25804,
-      "engine": "1.6L TDI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "38",
-      "model": "Golf",
-      "year": 2019,
-      "price": 21726,
-      "engine": "2.0L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "39",
-      "model": "Golf",
-      "year": 2022,
-      "price": 34538,
-      "engine": "2.0L TSI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "40",
-      "model": "Caddy",
-      "year": 2019,
-      "price": 28727,
-      "engine": "1.5L TSI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "41",
-      "model": "T-Roc",
-      "year": 2022,
-      "price": 37355,
-      "engine": "2.0L TSI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "42",
-      "model": "T-Roc",
-      "year": 2023,
-      "price": 21958,
-      "engine": "2.0L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "43",
-      "model": "ID.4",
-      "year": 2024,
-      "price": 46139,
-      "engine": "2.0L TDI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "44",
-      "model": "Polo",
-      "year": 2023,
-      "price": 57216,
-      "engine": "2.0L TSI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "45",
-      "model": "T-Cross",
-      "year": 2024,
-      "price": 37586,
-      "engine": "2.0L TSI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "46",
-      "model": "Arteon",
-      "year": 2021,
-      "price": 46822,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "47",
-      "model": "T-Roc",
-      "year": 2024,
-      "price": 51509,
-      "engine": "1.6L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "48",
-      "model": "Golf",
-      "year": 2018,
-      "price": 50307,
-      "engine": "1.0L TSI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "49",
-      "model": "ID.5",
-      "year": 2021,
-      "price": 33200,
-      "engine": "1.6L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "50",
-      "model": "Caddy",
-      "year": 2023,
-      "price": 21489,
-      "engine": "2.0L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "51",
-      "model": "Multivan",
-      "year": 2018,
-      "price": 33334,
-      "engine": "1.5L TSI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "52",
-      "model": "Touareg",
-      "year": 2018,
-      "price": 22942,
-      "engine": "2.0L TDI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "53",
-      "model": "ID.4",
-      "year": 2018,
-      "price": 30284,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "54",
-      "model": "Passat",
-      "year": 2018,
-      "price": 24358,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "55",
-      "model": "Passat",
-      "year": 2022,
-      "price": 26925,
-      "engine": "2.0L TDI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "56",
-      "model": "Amarok",
-      "year": 2024,
-      "price": 41334,
-      "engine": "2.0L TDI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "57",
-      "model": "ID.3",
-      "year": 2024,
-      "price": 58879,
-      "engine": "2.0L TSI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "58",
-      "model": "ID.4",
-      "year": 2019,
-      "price": 44269,
-      "engine": "2.0L TSI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "59",
-      "model": "Golf GTI",
-      "year": 2019,
-      "price": 24906,
-      "engine": "2.0L TSI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "60",
-      "model": "Passat",
-      "year": 2020,
-      "price": 34448,
-      "engine": "2.0L TDI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "61",
-      "model": "Caddy",
-      "year": 2018,
-      "price": 33917,
-      "engine": "2.0L TSI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "62",
-      "model": "Golf",
-      "year": 2022,
-      "price": 55360,
-      "engine": "2.0L TSI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "63",
-      "model": "Amarok",
-      "year": 2021,
-      "price": 31156,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "64",
-      "model": "Amarok",
-      "year": 2023,
-      "price": 46903,
-      "engine": "2.0L TDI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "65",
-      "model": "Multivan",
-      "year": 2022,
-      "price": 25333,
-      "engine": "1.6L TDI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "66",
-      "model": "Polo",
-      "year": 2020,
-      "price": 46628,
-      "engine": "2.0L TSI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "67",
-      "model": "Amarok",
-      "year": 2019,
-      "price": 54798,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "68",
-      "model": "T-Roc",
-      "year": 2024,
-      "price": 28598,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "69",
-      "model": "Multivan",
-      "year": 2019,
-      "price": 46468,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "70",
-      "model": "Caddy",
-      "year": 2023,
-      "price": 47526,
-      "engine": "2.0L TSI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "71",
-      "model": "Polo",
-      "year": 2020,
-      "price": 30193,
-      "engine": "1.6L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "72",
-      "model": "Polo",
-      "year": 2020,
-      "price": 29439,
-      "engine": "2.0L TDI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "73",
-      "model": "Polo",
-      "year": 2024,
-      "price": 41537,
-      "engine": "1.5L TSI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "74",
-      "model": "Amarok",
-      "year": 2022,
-      "price": 56349,
-      "engine": "1.6L TDI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "75",
-      "model": "Touareg",
-      "year": 2020,
-      "price": 31261,
-      "engine": "Electric",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "76",
-      "model": "Touareg",
-      "year": 2022,
-      "price": 31822,
-      "engine": "2.0L TDI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "77",
-      "model": "Multivan",
-      "year": 2021,
-      "price": 33630,
-      "engine": "1.0L TSI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "78",
-      "model": "Tiguan",
-      "year": 2021,
-      "price": 23429,
-      "engine": "1.6L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "79",
-      "model": "Touareg",
-      "year": 2019,
-      "price": 48409,
-      "engine": "1.6L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "80",
-      "model": "ID.3",
-      "year": 2020,
-      "price": 21877,
+      "id": "2486",
+      "model": "Test",
+      "year": "2024",
+      "price": "23456.78",
       "engine": "1.5L TSI",
       "transmission": "Single-speed"
     },
     {
-      "id": "81",
-      "model": "Multivan",
-      "year": 2021,
-      "price": 51045,
-      "engine": "1.6L TDI",
+      "id": "9abd",
+      "model": "Test",
+      "year": "2024",
+      "price": "238990",
+      "engine": "1.5L TSI",
       "transmission": "Manual"
     },
     {
-      "id": "82",
-      "model": "Passat",
-      "year": 2021,
-      "price": 58166,
-      "engine": "1.6L TDI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "83",
-      "model": "Arteon",
-      "year": 2020,
-      "price": 35021,
-      "engine": "1.0L TSI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "84",
-      "model": "Multivan",
-      "year": 2021,
-      "price": 24823,
-      "engine": "2.0L TSI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "85",
-      "model": "ID.5",
-      "year": 2023,
-      "price": 57603,
-      "engine": "2.0L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "86",
-      "model": "Caddy",
-      "year": 2023,
-      "price": 27307,
-      "engine": "1.6L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "87",
-      "model": "ID.4",
-      "year": 2024,
-      "price": 40147,
-      "engine": "1.6L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "88",
-      "model": "Caddy",
-      "year": 2022,
-      "price": 57058,
-      "engine": "1.6L TDI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "89",
-      "model": "Caddy",
-      "year": 2024,
-      "price": 55563,
-      "engine": "1.0L TSI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "90",
-      "model": "Golf GTI",
-      "year": 2019,
-      "price": 27626,
-      "engine": "1.0L TSI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "91",
-      "model": "Golf GTI",
-      "year": 2023,
-      "price": 33134,
+      "id": "61ea",
+      "model": "test",
+      "year": "2345.78",
+      "price": "234567",
       "engine": "1.5L TSI",
       "transmission": "Single-speed"
     },
     {
-      "id": "92",
-      "model": "ID.3",
-      "year": 2022,
-      "price": 26484,
+      "id": "78eb",
+      "model": "Test",
+      "year": "2024",
+      "price": "234",
       "engine": "1.5L TSI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "93",
-      "model": "T-Roc",
-      "year": 2023,
-      "price": 57226,
-      "engine": "1.6L TDI",
       "transmission": "Manual"
     },
     {
-      "id": "94",
-      "model": "Touareg",
-      "year": 2023,
-      "price": 50206,
-      "engine": "1.0L TSI",
-      "transmission": "Single-speed"
-    },
-    {
-      "id": "95",
-      "model": "ID.4",
-      "year": 2020,
-      "price": 56012,
-      "engine": "1.6L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "96",
-      "model": "Multivan",
-      "year": 2024,
-      "price": 26593,
-      "engine": "1.6L TDI",
-      "transmission": "Manual"
-    },
-    {
-      "id": "97",
-      "model": "ID.5",
-      "year": 2020,
-      "price": 53986,
+      "id": "50cb",
+      "model": "test",
+      "year": "2024",
+      "price": "24334.67",
       "engine": "1.0L TSI",
       "transmission": "Manual"
     },
     {
-      "id": "98",
-      "model": "Arteon",
-      "year": 2024,
-      "price": 32763,
-      "engine": "1.0L TSI",
-      "transmission": "Automatic"
+      "id": "78d4",
+      "model": "Test",
+      "year": "2023",
+      "price": "2345.78",
+      "engine": "1.5L TSI",
+      "transmission": "Manual"
     },
     {
-      "id": "99",
-      "model": "ID.3",
-      "year": 2022,
-      "price": 42028,
-      "engine": "1.6L TDI",
-      "transmission": "Automatic"
-    },
-    {
-      "id": "100",
-      "model": "T-Roc",
-      "year": 2024,
-      "price": 20503,
-      "engine": "2.0L TDI",
-      "transmission": "Single-speed"
+      "id": "9126",
+      "model": "Test",
+      "year": "2023",
+      "price": "23324.56",
+      "engine": "1.5L TSI",
+      "transmission": "Manual"
     }
   ]
 }

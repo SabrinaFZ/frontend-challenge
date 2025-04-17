@@ -9,6 +9,7 @@ import {
 import { formatPrice } from "../utils/formatPrice";
 import { useApp } from "./useApp";
 import Layout from "../components/common/Layout";
+import { Add } from "./Add";
 
 function App() {
   const { data, loading, error } = useApp();
@@ -27,6 +28,9 @@ function App() {
 
   return (
     <Layout>
+      <div className="mb-6 flex flex-col sm:flex-row gap-4">
+        <Add />
+      </div>
       <div className="border rounded-md">
         <Table>
           <TableHeader>

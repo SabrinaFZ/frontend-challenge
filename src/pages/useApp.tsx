@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import { Car } from "../types/car";
 
 export const useApp = () => {
@@ -9,12 +10,8 @@ export const useApp = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:3001/data");
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const result = await response.json();
-      setData(result);
+      const response = await axios.get<Car[]>("http://localhost:3001/data");
+      setData(response.data);
     } catch (error) {
       setError(error as Error);
     } finally {
