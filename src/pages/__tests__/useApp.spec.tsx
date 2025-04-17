@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { useApp } from "../../pages/useApp";
+import { useApp } from "../useApp";
 
 describe("useApp", () => {
   afterEach(() => {
