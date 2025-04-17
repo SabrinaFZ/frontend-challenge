@@ -4,16 +4,21 @@ import App from "../App";
 import * as useAppModule from "../useApp";
 import { Car } from "@/types/car";
 
+// Mocks
 vi.mock("../useApp.tsx");
+vi.mock("../features/add/Add.tsx", () => ({
+  Add: () => <div data-testid="mock-add">Mock Add Component</div>,
+}));
 
 describe("App", () => {
   beforeEach(() => {
-    vi.spyOn(useAppModule, "useApp").mockReturnValue({
+    vi.mocked(useAppModule.useApp).mockReturnValue({
       data: [],
       loading: true,
       error: null,
     });
   });
+
   afterEach(() => {
     vi.restoreAllMocks();
   });
@@ -25,7 +30,7 @@ describe("App", () => {
   });
 
   it("should display error state", () => {
-    vi.spyOn(useAppModule, "useApp").mockReturnValue({
+    vi.mocked(useAppModule.useApp).mockReturnValue({
       data: [],
       loading: false,
       error: new Error("Failed to fetch data"),
@@ -37,7 +42,7 @@ describe("App", () => {
   });
 
   it("should display no data message", () => {
-    vi.spyOn(useAppModule, "useApp").mockReturnValue({
+    vi.mocked(useAppModule.useApp).mockReturnValue({
       data: [],
       loading: false,
       error: null,
@@ -51,16 +56,16 @@ describe("App", () => {
   it("should render the table with data", async () => {
     const mockData = [
       {
-        id: 1,
+        id: "1",
         model: "Golf",
-        year: 2020,
-        price: 20000,
+        year: "2020",
+        price: "20000",
         engine: "1.5L",
         transmission: "Manual",
       },
-    ] as unknown as Car[];
+    ] as Car[];
 
-    vi.spyOn(useAppModule, "useApp").mockReturnValue({
+    vi.mocked(useAppModule.useApp).mockReturnValue({
       data: mockData,
       loading: false,
       error: null,
@@ -74,7 +79,7 @@ describe("App", () => {
     expect(screen.getByText("Year")).toBeInTheDocument();
     expect(screen.getByText("Price")).toBeInTheDocument();
     expect(screen.getByText("Engine")).toBeInTheDocument();
-    expect(screen.getByText("Transmision")).toBeInTheDocument();
+    expect(screen.getByText("Transmission")).toBeInTheDocument();
 
     // Check if table data is rendered
     await waitFor(() => {

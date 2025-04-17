@@ -40,7 +40,7 @@ function App() {
               <TableHead>Year</TableHead>
               <TableHead>Price</TableHead>
               <TableHead>Engine</TableHead>
-              <TableHead>Transmision</TableHead>
+              <TableHead>Transmission</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -49,7 +49,7 @@ function App() {
                 <TableCell>{car.id}</TableCell>
                 <TableCell>{car.model}</TableCell>
                 <TableCell>{car.year}</TableCell>
-                <TableCell>{formatPrice(car.price)}</TableCell>
+                <TableCell>{formatPrice(Number(car.price))}</TableCell>
                 <TableCell>{car.engine}</TableCell>
                 <TableCell>{car.transmission}</TableCell>
               </TableRow>
