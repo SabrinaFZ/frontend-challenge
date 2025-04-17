@@ -7,7 +7,7 @@ import {
   TableCell,
 } from "../components/ui/table";
 import { formatPrice } from "../utils/formatPrice";
-import { useApp } from "../hooks/useApp";
+import { useApp } from "./useApp";
 import Layout from "../components/common/Layout";
 
 function App() {
