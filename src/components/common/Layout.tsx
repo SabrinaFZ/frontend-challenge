@@ -1,13 +1,13 @@
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col min-h-screen">
-      <header className="p-4">
+    <div className="flex flex-col min-h-screen p-4">
+      <header className="mb-4">
         <h1 className="text-2xl">Volkswagen - Car Inventory</h1>
       </header>
-      <div className="container mx-auto p-4">
-        <main className="flex-grow p-4">{children}</main>
+      <div className="container">
+        <main className="flex-grow">{children}</main>
       </div>
-      <footer className="p-4 text-center text-xs">
+      <footer className="text-center text-xs mt-8">
         &copy; {new Date().getFullYear()} Car Inventory
       </footer>
     </div>
