@@ -8,15 +8,20 @@ import {
 } from "../components/ui/table";
 import { formatPrice } from "../utils/formatPrice";
 import { useApp } from "./useApp";
-import Layout from "../components/common/Layout";
 import { Add } from "../features/add/Add";
 import { Search } from "../features/search/Search";
 import { Delete } from "@/features/delete/Delete";
 import { Update } from "@/features/update/Update";
 import { Sort } from "@/features/sort/Sort";
+import { useNavigate } from "react-router";
 
 function App() {
   const { filteredData, loading, error } = useApp();
+  const navigate = useNavigate();
+
+  const handleClick = (id: string) => {
+    navigate(`/details/${id}`);
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -27,7 +32,7 @@ function App() {
   }
 
   return (
-    <Layout>
+    <>
       <div className="mb-6 flex flex-col sm:flex-row gap-4">
         <Add />
         <Search />
@@ -58,14 +63,21 @@ function App() {
             </TableHeader>
             <TableBody>
               {filteredData.map((car) => (
-                <TableRow key={car.id}>
+                <TableRow
+                  className="cursor-pointer hover:bg-muted/50 transition-colors"
+                  key={car.id}
+                  onClick={() => handleClick(car.id)}
+                >
                   <TableCell>{car.id}</TableCell>
                   <TableCell>{car.model}</TableCell>
                   <TableCell>{car.year}</TableCell>
                   <TableCell>{formatPrice(Number(car.price))}</TableCell>
                   <TableCell>{car.engine}</TableCell>
                   <TableCell>{car.transmission}</TableCell>
-                  <TableCell className="text-right">
+                  <TableCell
+                    className="text-right"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     <div className="flex justify-end gap-2">
                       <Delete id={car.id} />
                       <Update car={car} />
@@ -81,7 +93,7 @@ function App() {
           </div>
         )}
       </div>
-    </Layout>
+    </>
   );
 }
 
