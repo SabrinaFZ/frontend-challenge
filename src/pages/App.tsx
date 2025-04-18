@@ -13,6 +13,7 @@ import { Add } from "../features/add/Add";
 import { Search } from "../features/search/Search";
 import { Delete } from "@/features/delete/Delete";
 import { Update } from "@/features/update/Update";
+import { Sort } from "@/features/sort/Sort";
 
 function App() {
   const { filteredData, loading, error } = useApp();
@@ -37,11 +38,21 @@ function App() {
             <TableHeader>
               <TableRow>
                 <TableHead>Id</TableHead>
-                <TableHead>Model</TableHead>
-                <TableHead>Year</TableHead>
-                <TableHead>Price</TableHead>
-                <TableHead>Engine</TableHead>
-                <TableHead>Transmission</TableHead>
+                <TableHead>
+                  <Sort field="model" label="Model" />
+                </TableHead>
+                <TableHead>
+                  <Sort field="year" label="Year" />
+                </TableHead>
+                <TableHead>
+                  <Sort field="price" label="Price" />
+                </TableHead>
+                <TableHead>
+                  <Sort field="engine" label="Engine" />
+                </TableHead>
+                <TableHead>
+                  <Sort field="transmission" label="Transmission" />
+                </TableHead>
                 <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>

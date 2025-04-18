@@ -47,6 +47,27 @@ export const useAppState = () => {
     );
   }, []);
 
+  const sort = useCallback(
+    (field: keyof Car, order: "asc" | "desc" = "asc") => {
+      setFilteredData((prevFilteredData) => {
+        const sortedData = [...prevFilteredData].sort((a, b) => {
+          const aValue = !isNaN(Number(a[field]))
+            ? Number(a[field])
+            : String(a[field]);
+          const bValue = !isNaN(Number(b[field]))
+            ? Number(b[field])
+            : String(b[field]);
+
+          if (aValue < bValue) return order === "asc" ? -1 : 1;
+          if (aValue > bValue) return order === "asc" ? 1 : -1;
+          return 0;
+        });
+        return sortedData;
+      });
+    },
+    []
+  );
+
   return {
     filteredData,
     set,
@@ -54,5 +75,6 @@ export const useAppState = () => {
     filter,
     remove,
     update,
+    sort,
   };
 };

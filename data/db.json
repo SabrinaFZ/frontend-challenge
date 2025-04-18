@@ -3,7 +3,7 @@
     {
       "id": "1",
       "model": "Amarok",
-      "year": "2025",
+      "year": "2022",
       "price": "28249.00",
       "engine": "1.0L TSI",
       "transmission": "Single-speed"
@@ -201,14 +201,6 @@
       "transmission": "Manual"
     },
     {
-      "id": "61ea",
-      "model": "test",
-      "year": "2345.78",
-      "price": "234567",
-      "engine": "1.5L TSI",
-      "transmission": "Single-speed"
-    },
-    {
       "id": "78eb",
       "model": "Test",
       "year": "2024",
@@ -234,9 +226,9 @@
     },
     {
       "id": "9126",
-      "model": "TestUpdate2",
+      "model": "Test",
       "year": "2023",
-      "price": "23324.89",
+      "price": "23324.56",
       "engine": "1.5L TSI",
       "transmission": "Manual"
     }
