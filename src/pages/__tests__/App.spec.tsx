@@ -18,6 +18,11 @@ vi.mock("../../features/delete/Delete.tsx", () => ({
 vi.mock("../../features/update/Update.tsx", () => ({
   Update: () => <div data-testid="mock-update">Mock Update Component</div>,
 }));
+vi.mock("../../features/sort/Sort.tsx", () => ({
+  Sort: ({ field, label }: { field: string; label: string }) => (
+    <div data-testid={`mock-sort-${field}`}>{label}</div>
+  ),
+}));
 
 describe("App", () => {
   beforeEach(() => {

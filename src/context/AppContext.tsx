@@ -9,6 +9,7 @@ export interface AppContextType {
   filter: (searchTerm: string) => void;
   remove: (id: string) => void;
   update: (id: string, updatedItem: Car) => void;
+  sort: (field: keyof Car, order?: "asc" | "desc") => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
