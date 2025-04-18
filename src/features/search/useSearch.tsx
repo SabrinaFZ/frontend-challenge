@@ -7,6 +7,13 @@ export const useSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
+    /** No debounce on empty string */
+    if (searchTerm === "") {
+      filter("");
+      setLoading(false);
+      return;
+    }
+
     setLoading(true);
     const timeout = setTimeout(() => {
       filter(searchTerm);
