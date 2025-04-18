@@ -8,7 +8,6 @@ import {
 } from "../components/ui/table";
 import { formatPrice } from "../utils/formatPrice";
 import { useApp } from "./useApp";
-import Layout from "../components/common/Layout";
 import { Add } from "../features/add/Add";
 import { Search } from "../features/search/Search";
 import { Delete } from "@/features/delete/Delete";
@@ -27,7 +26,7 @@ function App() {
   }
 
   return (
-    <Layout>
+    <>
       <div className="mb-6 flex flex-col sm:flex-row gap-4">
         <Add />
         <Search />
@@ -81,7 +80,7 @@ function App() {
           </div>
         )}
       </div>
-    </Layout>
+    </>
   );
 }
 
