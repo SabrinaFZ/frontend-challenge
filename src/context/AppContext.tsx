@@ -3,9 +3,10 @@ import { useAppState } from "./useAppState";
 import { Car } from "@/types/car";
 
 export interface AppContextType {
-  data: Car[];
+  filteredData: Car[];
   add: (item: Car) => void;
   set: (newData: Car[]) => void;
+  filter: (searchTerm: string) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);

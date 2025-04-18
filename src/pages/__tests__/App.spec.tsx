@@ -6,14 +6,17 @@ import { Car } from "@/types/car";
 
 // Mocks
 vi.mock("../useApp.tsx");
-vi.mock("../features/add/Add.tsx", () => ({
+vi.mock("../../features/add/Add.tsx", () => ({
   Add: () => <div data-testid="mock-add">Mock Add Component</div>,
+}));
+vi.mock("../../features/search/Search.tsx", () => ({
+  Search: () => <div data-testid="mock-search">Mock Search Component</div>,
 }));
 
 describe("App", () => {
   beforeEach(() => {
     vi.mocked(useAppModule.useApp).mockReturnValue({
-      data: [],
+      filteredData: [],
       loading: true,
       error: null,
     });
@@ -31,7 +34,7 @@ describe("App", () => {
 
   it("should display error state", () => {
     vi.mocked(useAppModule.useApp).mockReturnValue({
-      data: [],
+      filteredData: [],
       loading: false,
       error: new Error("Failed to fetch data"),
     });
@@ -43,14 +46,14 @@ describe("App", () => {
 
   it("should display no data message", () => {
     vi.mocked(useAppModule.useApp).mockReturnValue({
-      data: [],
+      filteredData: [],
       loading: false,
       error: null,
     });
 
     render(<App />);
 
-    expect(screen.getByText("No data available")).toBeInTheDocument();
+    expect(screen.getByText("No results found")).toBeInTheDocument();
   });
 
   it("should render the table with data", async () => {
@@ -66,7 +69,7 @@ describe("App", () => {
     ] as Car[];
 
     vi.mocked(useAppModule.useApp).mockReturnValue({
-      data: mockData,
+      filteredData: mockData,
       loading: false,
       error: null,
     });

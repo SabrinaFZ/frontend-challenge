@@ -4,7 +4,7 @@ import { Car } from "../types/car";
 import { useAppContext } from "@/context/useAppContext";
 
 export const useApp = () => {
-  const { data, set } = useAppContext();
+  const { filteredData, set } = useAppContext();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
@@ -25,5 +25,5 @@ export const useApp = () => {
     fetchData();
   }, [fetchData]);
 
-  return { data, loading, error };
+  return { filteredData, loading, error };
 };
