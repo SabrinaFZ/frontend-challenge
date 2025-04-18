@@ -11,6 +11,7 @@ export const Sort = ({ field, label }: { field: keyof Car; label: string }) => {
       variant="ghost"
       onClick={() => handleSort(field)}
       className="flex items-center gap-2"
+      size="noPadding"
     >
       {label}
       <ArrowUpDown className="h-4 w-4" />

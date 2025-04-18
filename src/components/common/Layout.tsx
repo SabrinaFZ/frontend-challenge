@@ -6,8 +6,8 @@ export default function Layout() {
       <header className="mb-4">
         <h1 className="text-2xl">Volkswagen - Car Inventory</h1>
       </header>
-      <div className="container">
-        <main className="flex-grow">
+      <div className="container flex-grow">
+        <main>
           <Outlet />
         </main>
       </div>

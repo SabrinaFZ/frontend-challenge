@@ -68,6 +68,17 @@ export const useAppState = () => {
     []
   );
 
+  const get = useCallback(
+    (id: string) => {
+      const item = data.find((item) => item.id === id);
+      if (!item) {
+        throw new Error(`Item with id ${id} not found`);
+      }
+      return item;
+    },
+    [data]
+  );
+
   return {
     filteredData,
     set,
@@ -76,5 +87,6 @@ export const useAppState = () => {
     remove,
     update,
     sort,
+    get,
   };
 };

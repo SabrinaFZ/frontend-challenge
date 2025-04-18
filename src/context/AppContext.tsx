@@ -10,6 +10,7 @@ export interface AppContextType {
   remove: (id: string) => void;
   update: (id: string, updatedItem: Car) => void;
   sort: (field: keyof Car, order?: "asc" | "desc") => void;
+  get: (id: string) => Car | undefined;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
