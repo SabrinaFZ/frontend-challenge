@@ -6,10 +6,10 @@ import { Car } from "@/types/car";
 
 // Mocks
 vi.mock("../useApp.tsx");
-vi.mock("../features/add/Add.tsx", () => ({
+vi.mock("../../features/add/Add.tsx", () => ({
   Add: () => <div data-testid="mock-add">Mock Add Component</div>,
 }));
-vi.mock("../features/search/Search.tsx", () => ({
+vi.mock("../../features/search/Search.tsx", () => ({
   Search: () => <div data-testid="mock-search">Mock Search Component</div>,
 }));
 
