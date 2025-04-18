@@ -28,7 +28,7 @@ export const Update = ({ car }: { car: Car }) => {
     <>
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="ghost" size="icon">
+          <Button variant="ghost" size="icon" aria-label="Edit">
             <Edit className="h-4 w-4" />
           </Button>
         </DialogTrigger>
@@ -37,7 +37,8 @@ export const Update = ({ car }: { car: Car }) => {
             <DialogTitle>Update Item</DialogTitle>
           </DialogHeader>
           <form
-            name="add"
+            name="update"
+            aria-label="Update"
             onSubmit={(e) => handleSubmit(e, car.id)}
             className="w-full max-w-lg mx-auto"
           >
