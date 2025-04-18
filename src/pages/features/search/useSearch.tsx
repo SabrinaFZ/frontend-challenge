@@ -7,14 +7,17 @@ export const useSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
+    setLoading(true);
     const timeout = setTimeout(() => {
       filter(searchTerm);
+      setLoading(false);
     }, 300);
 
     return () => clearTimeout(timeout);
   }, [searchTerm, filter]);
 
   return {
+    loading,
     searchTerm,
     setSearchTerm,
   };
