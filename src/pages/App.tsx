@@ -12,6 +12,7 @@ import Layout from "../components/common/Layout";
 import { Add } from "../features/add/Add";
 import { Search } from "../features/search/Search";
 import { Delete } from "@/features/delete/Delete";
+import { Update } from "@/features/update/Update";
 
 function App() {
   const { filteredData, loading, error } = useApp();
@@ -56,6 +57,7 @@ function App() {
                   <TableCell className="text-right">
                     <div className="flex justify-end gap-2">
                       <Delete id={car.id} />
+                      <Update car={car} />
                     </div>
                   </TableCell>
                 </TableRow>
