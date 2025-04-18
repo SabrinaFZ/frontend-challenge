@@ -29,7 +29,7 @@ export const Delete = ({ id }: { id: string }) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" size="icon" aria-label="Delete">
           <Trash className="h-4 w-4" />
         </Button>
       </DialogTrigger>
@@ -37,7 +37,7 @@ export const Delete = ({ id }: { id: string }) => {
         <DialogHeader>
           <DialogTitle>Confirm</DialogTitle>
         </DialogHeader>
-        <form name="delete" onSubmit={handleSubmit}>
+        <form name="delete" aria-label="Delete" onSubmit={handleSubmit}>
           <p className="text-muted-foreground">
             Are you sure you want to delete this item? with id{" "}
             <strong>{id}</strong>? This action can not be undone.

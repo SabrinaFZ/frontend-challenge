@@ -8,6 +8,7 @@ export interface AppContextType {
   set: (newData: Car[]) => void;
   filter: (searchTerm: string) => void;
   remove: (id: string) => void;
+  update: (id: string, updatedItem: Car) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);

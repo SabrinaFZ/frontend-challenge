@@ -38,11 +38,21 @@ export const useAppState = () => {
     setFilteredData((prevData) => prevData.filter((item) => item.id !== id));
   }, []);
 
+  const update = useCallback((id: string, updatedItem: Car) => {
+    setData((prevData) =>
+      prevData.map((item) => (item.id === id ? updatedItem : item))
+    );
+    setFilteredData((prevData) =>
+      prevData.map((item) => (item.id === id ? updatedItem : item))
+    );
+  }, []);
+
   return {
     filteredData,
     set,
     add,
     filter,
     remove,
+    update,
   };
 };

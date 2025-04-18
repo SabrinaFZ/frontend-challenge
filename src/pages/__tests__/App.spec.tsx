@@ -15,6 +15,9 @@ vi.mock("../../features/search/Search.tsx", () => ({
 vi.mock("../../features/delete/Delete.tsx", () => ({
   Delete: () => <div data-testid="mock-delete">Mock Delete Component</div>,
 }));
+vi.mock("../../features/update/Update.tsx", () => ({
+  Update: () => <div data-testid="mock-update">Mock Update Component</div>,
+}));
 
 describe("App", () => {
   beforeEach(() => {
