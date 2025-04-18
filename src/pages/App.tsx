@@ -9,8 +9,8 @@ import {
 import { formatPrice } from "../utils/formatPrice";
 import { useApp } from "./useApp";
 import Layout from "../components/common/Layout";
-import { Add } from "./features/add/Add";
-import { Search } from "./features/search/Search";
+import { Add } from "../features/add/Add";
+import { Search } from "../features/search/Search";
 
 function App() {
   const { filteredData, loading, error } = useApp();
