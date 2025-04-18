@@ -3,6 +3,7 @@ import { vi, describe, expect, it, afterEach, beforeEach } from "vitest";
 import App from "../App";
 import * as useAppModule from "../useApp";
 import { Car } from "@/types/car";
+import { MemoryRouter } from "react-router";
 
 // Mocks
 vi.mock("../useApp.tsx");
@@ -38,8 +39,11 @@ describe("App", () => {
   });
 
   it("should display loading state", () => {
-    render(<App />);
-
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
     expect(screen.getByText("Loading...")).toBeInTheDocument();
   });
 
@@ -50,7 +54,11 @@ describe("App", () => {
       error: new Error("Failed to fetch data"),
     });
 
-    render(<App />);
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
 
     expect(screen.getByText("Error: Failed to fetch data")).toBeInTheDocument();
   });
@@ -62,7 +70,11 @@ describe("App", () => {
       error: null,
     });
 
-    render(<App />);
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
 
     expect(screen.getByText("No results found")).toBeInTheDocument();
   });
@@ -85,7 +97,11 @@ describe("App", () => {
       error: null,
     });
 
-    render(<App />);
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
 
     // Check if table headers are rendered
     expect(screen.getByText("Id")).toBeInTheDocument();
