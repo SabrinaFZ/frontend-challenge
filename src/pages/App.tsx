@@ -11,6 +11,7 @@ import { useApp } from "./useApp";
 import Layout from "../components/common/Layout";
 import { Add } from "../features/add/Add";
 import { Search } from "../features/search/Search";
+import { Delete } from "@/features/delete/Delete";
 
 function App() {
   const { filteredData, loading, error } = useApp();
@@ -40,6 +41,7 @@ function App() {
                 <TableHead>Price</TableHead>
                 <TableHead>Engine</TableHead>
                 <TableHead>Transmission</TableHead>
+                <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -51,6 +53,11 @@ function App() {
                   <TableCell>{formatPrice(Number(car.price))}</TableCell>
                   <TableCell>{car.engine}</TableCell>
                   <TableCell>{car.transmission}</TableCell>
+                  <TableCell className="text-right">
+                    <div className="flex justify-end gap-2">
+                      <Delete id={car.id} />
+                    </div>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

@@ -33,10 +33,16 @@ export const useAppState = () => {
     [data]
   );
 
+  const remove = useCallback((id: string) => {
+    setData((prevData) => prevData.filter((item) => item.id !== id));
+    setFilteredData((prevData) => prevData.filter((item) => item.id !== id));
+  }, []);
+
   return {
     filteredData,
     set,
     add,
     filter,
+    remove,
   };
 };
