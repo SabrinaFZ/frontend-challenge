@@ -1,4 +1,4 @@
-export const vehicles = [
+const vehicles = [
   {
     id: "1",
     model: "Amarok",
@@ -230,7 +230,7 @@ export function onRequestGet() {
   return Response.json(vehicles);
 }
 
-export function onRequestPost(request) {
+/* export function onRequestPost(request) {
   const { id, model, year, price, engine, transmission } = request.json();
   const newVehicle = {
     id,
@@ -243,3 +243,4 @@ export function onRequestPost(request) {
   vehicles.push(newVehicle);
   return Response.json(newVehicle);
 }
+ */
