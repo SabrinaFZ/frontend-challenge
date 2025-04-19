@@ -1,7 +1,7 @@
-import vehicles from "./vehicles/data.js";
+import cars from "./cars/data.js";
 
 export function onRequestGet() {
-  return Response.json(vehicles);
+  return Response.json(cars);
 }
 
 export async function onRequestPost({ request }) {
@@ -10,7 +10,7 @@ export async function onRequestPost({ request }) {
   // generates a 6-digit number
   const id = Math.floor(100000 + Math.random() * 900000);
 
-  const newVehicle = {
+  const newCar = {
     id: id.toString(),
     model,
     year,
@@ -18,6 +18,6 @@ export async function onRequestPost({ request }) {
     engine,
     transmission,
   };
-  vehicles.push(newVehicle);
-  return Response.json(newVehicle);
+  cars.push(newCar);
+  return Response.json(newCar);
 }
