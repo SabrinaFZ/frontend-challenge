@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 
-export default function Layout() {
+export const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen p-4 max-w-screen-2xl mx-auto">
       <header className="mb-4">
@@ -14,4 +14,4 @@ export default function Layout() {
       </footer>
     </div>
   );
-}
+};

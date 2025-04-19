@@ -5,15 +5,17 @@ import {
   TableHead,
   TableBody,
   TableCell,
-} from "../../components/ui/table";
-import { formatPrice } from "../../utils/formatPrice";
+} from "@/components/ui/table";
+import { formatPrice } from "@/utils/formatPrice";
 import { useDataTable } from "./useDataTable";
-import { Add } from "../../features/add/Add";
-import { Search } from "../../features/search/Search";
+import { Add } from "@/features/add/Add";
+import { Search } from "@/features/search/Search";
 import { Delete } from "@/features/delete/Delete";
 import { Update } from "@/features/update/Update";
 import { Sort } from "@/features/sort/Sort";
 import { useNavigate } from "react-router";
+import { Loading } from "@/components/common/Loading";
+import { Error } from "@/components/common/Error";
 
 export const DataTable = () => {
   const { filteredData, loading, error } = useDataTable();
@@ -24,11 +26,11 @@ export const DataTable = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <Error />;
   }
 
   return (

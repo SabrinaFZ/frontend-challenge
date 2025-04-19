@@ -24,6 +24,12 @@ vi.mock("../../sort/Sort.tsx", () => ({
     <div data-testid={`mock-sort-${field}`}>{label}</div>
   ),
 }));
+vi.mock("../../../components/common/Loading.tsx", () => ({
+  Loading: () => <div data-testid="mock-loading">Mock Loading Component</div>,
+}));
+vi.mock("../../../components/common/Error.tsx", () => ({
+  Error: () => <div data-testid="mock-error">Mock Error Component</div>,
+}));
 
 describe("DataTable Component", () => {
   beforeEach(() => {
@@ -44,7 +50,7 @@ describe("DataTable Component", () => {
         <DataTable />
       </MemoryRouter>
     );
-    expect(screen.getByText("Loading...")).toBeInTheDocument();
+    expect(screen.getByTestId("mock-loading")).toBeInTheDocument();
   });
 
   it("should display error state", () => {
@@ -60,7 +66,7 @@ describe("DataTable Component", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Error: Failed to fetch data")).toBeInTheDocument();
+    expect(screen.getByTestId("mock-error")).toBeInTheDocument();
   });
 
   it("should display no data message", () => {

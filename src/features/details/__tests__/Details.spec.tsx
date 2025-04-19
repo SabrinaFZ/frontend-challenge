@@ -7,6 +7,12 @@ import { useDetails } from "../useDetails";
 vi.mock("../useDetails", () => ({
   useDetails: vi.fn(),
 }));
+vi.mock("../../../components/common/Loading.tsx", () => ({
+  Loading: () => <div data-testid="mock-loading">Mock Loading Component</div>,
+}));
+vi.mock("../../../components/common/Error.tsx", () => ({
+  Error: () => <div data-testid="mock-error">Mock Error Component</div>,
+}));
 
 describe("Details Component", () => {
   it("renders loading state", () => {
@@ -18,7 +24,7 @@ describe("Details Component", () => {
 
     render(<Details id="1" />);
 
-    expect(screen.getByText(/loading/i)).toBeInTheDocument();
+    expect(screen.getByTestId("mock-loading")).toBeInTheDocument();
   });
 
   it("renders error state", () => {
@@ -30,8 +36,7 @@ describe("Details Component", () => {
 
     render(<Details id="1" />);
 
-    expect(screen.getByText(/error/i)).toBeInTheDocument();
-    expect(screen.getByText(/failed to fetch details/i)).toBeInTheDocument();
+    expect(screen.getByTestId("mock-error")).toBeInTheDocument();
   });
 
   it("renders car details", () => {
