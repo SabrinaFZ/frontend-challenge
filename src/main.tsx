@@ -7,6 +7,7 @@ import Layout from "./components/common/Layout.tsx";
 
 const App = lazy(() => import("./pages/App.tsx"));
 const Details = lazy(() => import("./pages/Details.tsx"));
+const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById("root")!).render(
                   <Route index element={<Details />} />
                 </Route>
               </Route>
+              <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
         </Suspense>
