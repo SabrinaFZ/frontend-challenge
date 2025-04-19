@@ -7,8 +7,8 @@ export function onRequestGet() {
 export async function onRequestPost({ request }) {
   const { model, year, price, engine, transmission } = await request.json();
 
-  const id =
-    vehicles.length > 0 ? Math.max(...vehicles.map((v) => +v.id)) + 1 : 1;
+  // generates a 6-digit number
+  const id = Math.floor(100000 + Math.random() * 900000);
 
   const newVehicle = {
     id: id.toString(),
