@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
-import { Car } from "../../types/car";
+import { Car } from "@/types/car";
 import { useAppContext } from "@/context/useAppContext";
 
 export const useDataTable = () => {

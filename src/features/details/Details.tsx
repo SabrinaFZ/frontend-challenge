@@ -1,3 +1,5 @@
+import { Error } from "@/components/common/Error";
+import { Loading } from "@/components/common/Loading";
 import {
   Card,
   CardHeader,
@@ -13,20 +15,11 @@ export const Details = ({ id }: { id: string }) => {
   const { data, loading, error } = useDetails(id);
 
   if (loading) {
-    return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-2xl font-bold mb-4">Loading...</h1>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (error) {
-    return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-2xl font-bold mb-4">Error</h1>
-        <p className="text-lg">{error.message}</p>
-      </div>
-    );
+    return <Error />;
   }
 
   return (
