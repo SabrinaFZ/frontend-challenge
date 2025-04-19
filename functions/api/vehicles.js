@@ -1,7 +1,7 @@
 import vehicles from "./vehicles/data";
 
 export function onRequestGet() {
-  return new Response("Vehicles API root works", { status: 200 });
+  return Response.json(vehicles);
 }
 
 export function onRequestPost(request) {
