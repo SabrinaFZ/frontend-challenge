@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
-import { Car } from "../types/car";
+import { Car } from "../../types/car";
 import { useAppContext } from "@/context/useAppContext";
 
-export const useApp = () => {
+export const useDataTable = () => {
   const { filteredData, set } = useAppContext();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
