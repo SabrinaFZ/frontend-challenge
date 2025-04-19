@@ -6,11 +6,9 @@ export default function Layout() {
       <header className="mb-4">
         <h1 className="text-2xl">Volkswagen - Car Inventory</h1>
       </header>
-      <div className="container flex-grow">
-        <main>
-          <Outlet />
-        </main>
-      </div>
+      <main className="flex-grow">
+        <Outlet />
+      </main>
       <footer className="text-center text-xs mt-8">
         &copy; {new Date().getFullYear()} Car Inventory
       </footer>

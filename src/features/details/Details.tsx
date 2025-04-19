@@ -30,7 +30,7 @@ export const Details = ({ id }: { id: string }) => {
   }
 
   return (
-    <div>
+    <>
       {data ? (
         <div className="container mx-auto py-8">
           <Card>
@@ -82,6 +82,6 @@ export const Details = ({ id }: { id: string }) => {
       ) : (
         <p className="text-lg">No details</p>
       )}
-    </div>
+    </>
   );
 };
