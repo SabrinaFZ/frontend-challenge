@@ -123,7 +123,7 @@ export const Update = ({ car }: { car: Car }) => {
                   <SelectContent>
                     <SelectItem value="Manual">Manual</SelectItem>
                     <SelectItem value="Single-speed">Single-speed</SelectItem>
-                    <SelectItem value="Auutomatic">Automatic</SelectItem>
+                    <SelectItem value="Automatic">Automatic</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
