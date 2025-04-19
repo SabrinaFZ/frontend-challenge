@@ -4,10 +4,14 @@ export function onRequestGet() {
   return Response.json(vehicles);
 }
 
-export function onRequestPost(request) {
-  const { id, model, year, price, engine, transmission } = request.json();
+export async function onRequestPost({ request }) {
+  const { model, year, price, engine, transmission } = await request.json();
+
+  const id =
+    vehicles.length > 0 ? Math.max(...vehicles.map((v) => v.id)) + 1 : 1;
+
   const newVehicle = {
-    id,
+    id: id.toString(),
     model,
     year,
     price,

@@ -16,8 +16,9 @@ export function onRequestGet(context) {
   return Response.json(vehicle);
 }
 
-export function onRequestPut(request) {
-  const { id, model, year, price, engine, transmission } = request.json();
+export async function onRequestPut({ request, params }) {
+  const id = params.id;
+  const { model, year, price, engine, transmission } = await request.json();
   const vehicleIndex = vehicles.findIndex((vehicle) => vehicle.id === id);
   if (vehicleIndex === -1) {
     return Response.json({ error: "Vehicle not found" }, { status: 404 });
@@ -33,8 +34,8 @@ export function onRequestPut(request) {
   return Response.json(vehicles[vehicleIndex]);
 }
 
-export function onRequestDelete(request) {
-  const { id } = request.json();
+export function onRequestDelete({ params }) {
+  const id = params.id;
   const vehicleIndex = vehicles.findIndex((vehicle) => vehicle.id === id);
   if (vehicleIndex === -1) {
     return Response.json({ error: "Vehicle not found" }, { status: 404 });
