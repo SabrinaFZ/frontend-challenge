@@ -1,4 +1,4 @@
-const vehicles = [
+export const vehicles = [
   {
     id: "1",
     model: "Amarok",
