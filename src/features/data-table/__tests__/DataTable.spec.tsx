@@ -1,33 +1,33 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { vi, describe, expect, it, afterEach, beforeEach } from "vitest";
-import App from "../App";
-import * as useAppModule from "../useApp";
-import { Car } from "@/types/car";
 import { MemoryRouter } from "react-router";
+import { DataTable } from "../DataTable";
+import { Car } from "@/types/car";
+import * as useDataTableModule from "../useDataTable";
 
 // Mocks
-vi.mock("../useApp.tsx");
-vi.mock("../../features/add/Add.tsx", () => ({
+vi.mock("../useDataTable.tsx");
+vi.mock("../../add/Add.tsx", () => ({
   Add: () => <div data-testid="mock-add">Mock Add Component</div>,
 }));
-vi.mock("../../features/search/Search.tsx", () => ({
+vi.mock("../../search/Search.tsx", () => ({
   Search: () => <div data-testid="mock-search">Mock Search Component</div>,
 }));
-vi.mock("../../features/delete/Delete.tsx", () => ({
+vi.mock("../../delete/Delete.tsx", () => ({
   Delete: () => <div data-testid="mock-delete">Mock Delete Component</div>,
 }));
-vi.mock("../../features/update/Update.tsx", () => ({
+vi.mock("../../update/Update.tsx", () => ({
   Update: () => <div data-testid="mock-update">Mock Update Component</div>,
 }));
-vi.mock("../../features/sort/Sort.tsx", () => ({
+vi.mock("../../sort/Sort.tsx", () => ({
   Sort: ({ field, label }: { field: string; label: string }) => (
     <div data-testid={`mock-sort-${field}`}>{label}</div>
   ),
 }));
 
-describe("App", () => {
+describe("DataTable Component", () => {
   beforeEach(() => {
-    vi.mocked(useAppModule.useApp).mockReturnValue({
+    vi.mocked(useDataTableModule.useDataTable).mockReturnValue({
       filteredData: [],
       loading: true,
       error: null,
@@ -41,14 +41,14 @@ describe("App", () => {
   it("should display loading state", () => {
     render(
       <MemoryRouter>
-        <App />
+        <DataTable />
       </MemoryRouter>
     );
     expect(screen.getByText("Loading...")).toBeInTheDocument();
   });
 
   it("should display error state", () => {
-    vi.mocked(useAppModule.useApp).mockReturnValue({
+    vi.mocked(useDataTableModule.useDataTable).mockReturnValue({
       filteredData: [],
       loading: false,
       error: new Error("Failed to fetch data"),
@@ -56,7 +56,7 @@ describe("App", () => {
 
     render(
       <MemoryRouter>
-        <App />
+        <DataTable />
       </MemoryRouter>
     );
 
@@ -64,7 +64,7 @@ describe("App", () => {
   });
 
   it("should display no data message", () => {
-    vi.mocked(useAppModule.useApp).mockReturnValue({
+    vi.mocked(useDataTableModule.useDataTable).mockReturnValue({
       filteredData: [],
       loading: false,
       error: null,
@@ -72,7 +72,7 @@ describe("App", () => {
 
     render(
       <MemoryRouter>
-        <App />
+        <DataTable />
       </MemoryRouter>
     );
 
@@ -91,7 +91,7 @@ describe("App", () => {
       },
     ] as Car[];
 
-    vi.mocked(useAppModule.useApp).mockReturnValue({
+    vi.mocked(useDataTableModule.useDataTable).mockReturnValue({
       filteredData: mockData,
       loading: false,
       error: null,
@@ -99,7 +99,7 @@ describe("App", () => {
 
     render(
       <MemoryRouter>
-        <App />
+        <DataTable />
       </MemoryRouter>
     );
 

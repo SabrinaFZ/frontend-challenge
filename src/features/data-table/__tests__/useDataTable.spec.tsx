@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { describe, it, expect, afterEach, vi, beforeEach, Mock } from "vitest";
-import { useApp } from "../useApp";
+import { useDataTable } from "../useDataTable";
 import axios from "axios";
 import { useAppContext } from "@/context/useAppContext";
 
@@ -8,7 +8,7 @@ const mockedAxios = axios as unknown as {
   get: ReturnType<typeof vi.fn>;
 };
 
-describe("useApp", () => {
+describe("useDataTable", () => {
   const mockSet = vi.fn();
   const mockData = [
     {
@@ -36,7 +36,7 @@ describe("useApp", () => {
   it("returns initial loading state", () => {
     mockedAxios.get = vi.fn().mockResolvedValue({ data: [] });
 
-    const { result } = renderHook(() => useApp());
+    const { result } = renderHook(() => useDataTable());
 
     expect(result.current.loading).toBe(true);
     expect(result.current.error).toBeNull();
@@ -45,7 +45,7 @@ describe("useApp", () => {
   it("fetches and sets data on success", async () => {
     mockedAxios.get = vi.fn().mockResolvedValue({ data: mockData });
 
-    const { result } = renderHook(() => useApp());
+    const { result } = renderHook(() => useDataTable());
 
     await waitFor(() => expect(result.current.loading).toBe(false));
 
@@ -56,7 +56,7 @@ describe("useApp", () => {
   it("handles fetch error correctly", async () => {
     mockedAxios.get = vi.fn().mockRejectedValue(new Error("Network Error"));
 
-    const { result } = renderHook(() => useApp());
+    const { result } = renderHook(() => useDataTable());
 
     await waitFor(() => expect(result.current.loading).toBe(false));
 
