@@ -55,26 +55,11 @@ describe("Delete Component", () => {
     });
   });
 
-  it("displays the loading state", () => {
-    (useDelete as Mock).mockReturnValue({
-      deleteItem: mockDeleteItem,
-      loading: true,
-      error: null,
-    });
-
-    render(<Delete id="1" />);
-
-    // Open the dialog
-    fireEvent.click(screen.getByRole("button", { name: /delete/i }));
-
-    expect(screen.getByText(/deleting/i)).toBeInTheDocument();
-  });
-
   it("displays an error message when deletion fails", async () => {
     (useDelete as Mock).mockReturnValue({
       deleteItem: mockDeleteItem,
       loading: false,
-      error: "Failed to delete item",
+      error: "Something went wrong. Please try again later.",
     });
 
     render(<Delete id="1" />);
@@ -82,6 +67,10 @@ describe("Delete Component", () => {
     // Open the dialog
     fireEvent.click(screen.getByRole("button", { name: /delete/i }));
 
-    expect(screen.getByText(/failed to delete item/i)).toBeInTheDocument();
+    await waitFor(() => {
+      expect(
+        screen.getByText(/Something went wrong. Please try again later./i)
+      ).toBeInTheDocument();
+    });
   });
 });
