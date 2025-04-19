@@ -15,7 +15,7 @@ export function onRequestGet(context) {
 
   return Response.json(vehicle);
 }
-/* 
+
 export function onRequestPut(request) {
   const { id, model, year, price, engine, transmission } = request.json();
   const vehicleIndex = vehicles.findIndex((vehicle) => vehicle.id === id);
@@ -42,4 +42,3 @@ export function onRequestDelete(request) {
   const deletedVehicle = vehicles.splice(vehicleIndex, 1);
   return Response.json(deletedVehicle[0]);
 }
- */

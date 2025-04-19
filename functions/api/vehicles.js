@@ -1,13 +1,10 @@
+import vehicles from "./vehicles/data.js";
+
 export function onRequestGet() {
-  return new Response(JSON.stringify({ success: true }), {
-    status: 200,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  return Response.json(vehicles);
 }
 
-/* export function onRequestPost(request) {
+export function onRequestPost(request) {
   const { id, model, year, price, engine, transmission } = request.json();
   const newVehicle = {
     id,
@@ -20,4 +17,3 @@ export function onRequestGet() {
   vehicles.push(newVehicle);
   return Response.json(newVehicle);
 }
- */
