@@ -1,4 +1,4 @@
-import vehicles from "./vehicles/data";
+import vehicles from "./vehicles/data.js";
 
 export function onRequestGet() {
   return Response.json(vehicles);
