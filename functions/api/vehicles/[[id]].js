@@ -1,4 +1,4 @@
-import vehicles from "./data";
+import vehicles from "../vehicles.js";
 
 export function onRequestGet(context) {
   const id = context.params.id;
