@@ -13,7 +13,12 @@ export function onRequestGet(context) {
     return new Response("Not found", { status: 404 });
   }
 
-  return Response.json(vehicle);
+  return new Response(JSON.stringify(vehicle), {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 }
 /* 
 export function onRequestPut(request) {
