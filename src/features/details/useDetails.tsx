@@ -13,7 +13,7 @@ export const useDetails = (id: string | undefined) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get<Car>(`/api/vehicles/${id}`);
+      const response = await axios.get<Car>(`/api/cars/${id}`);
       setData(response.data);
     } catch (err) {
       setError(err as Error);

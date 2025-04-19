@@ -84,7 +84,7 @@ describe("useUpdate Hook", () => {
 
     expect(success).toBe(true);
 
-    expect(mockedAxios.put).toHaveBeenCalledWith("/api/vehicles/1", mockCar);
+    expect(mockedAxios.put).toHaveBeenCalledWith("/api/cars/1", mockCar);
 
     expect(mockUpdate).toHaveBeenCalledWith("1", {
       ...mockCar,
@@ -106,7 +106,7 @@ describe("useUpdate Hook", () => {
 
     expect(success).toBe(false);
 
-    expect(mockedAxios.put).toHaveBeenCalledWith("/api/vehicles/1", mockCar);
+    expect(mockedAxios.put).toHaveBeenCalledWith("/api/cars/1", mockCar);
 
     expect(mockUpdate).not.toHaveBeenCalled();
   });

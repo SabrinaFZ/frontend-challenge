@@ -72,7 +72,7 @@ describe("useAdd Hook", () => {
 
     // Assertions
     expect(resultValue).toBe(true);
-    expect(mockedAxios.post).toHaveBeenCalledWith("/api/vehicles", {
+    expect(mockedAxios.post).toHaveBeenCalledWith("/api/cars", {
       model: "Test Model",
       year: "2023",
       price: "30000",
@@ -123,7 +123,7 @@ describe("useAdd Hook", () => {
 
     // Assertions
     expect(resultValue).toBe(false);
-    expect(mockedAxios.post).toHaveBeenCalledWith("/api/vehicles", {
+    expect(mockedAxios.post).toHaveBeenCalledWith("/api/cars", {
       model: "Test Model",
       year: "2023",
       price: "30000",
