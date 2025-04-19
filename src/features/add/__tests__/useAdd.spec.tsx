@@ -72,16 +72,13 @@ describe("useAdd Hook", () => {
 
     // Assertions
     expect(resultValue).toBe(true);
-    expect(mockedAxios.post).toHaveBeenCalledWith(
-      "http://localhost:3001/data",
-      {
-        model: "Test Model",
-        year: "2023",
-        price: "30000",
-        engine: "1.5L TSI",
-        transmission: "Manual",
-      }
-    );
+    expect(mockedAxios.post).toHaveBeenCalledWith("/api/vehicles", {
+      model: "Test Model",
+      year: "2023",
+      price: "30000",
+      engine: "1.5L TSI",
+      transmission: "Manual",
+    });
     expect(mockAdd).toHaveBeenCalledWith(mockResponse.data);
     expect(result.current.formData).toEqual({
       model: "",
@@ -126,16 +123,13 @@ describe("useAdd Hook", () => {
 
     // Assertions
     expect(resultValue).toBe(false);
-    expect(mockedAxios.post).toHaveBeenCalledWith(
-      "http://localhost:3001/data",
-      {
-        model: "Test Model",
-        year: "2023",
-        price: "30000",
-        engine: "1.5L TSI",
-        transmission: "Manual",
-      }
-    );
+    expect(mockedAxios.post).toHaveBeenCalledWith("/api/vehicles", {
+      model: "Test Model",
+      year: "2023",
+      price: "30000",
+      engine: "1.5L TSI",
+      transmission: "Manual",
+    });
     expect(mockAdd).not.toHaveBeenCalled();
     expect(result.current.formData).toEqual({
       model: "Test Model",

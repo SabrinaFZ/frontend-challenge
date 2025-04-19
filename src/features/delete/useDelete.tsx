@@ -13,7 +13,7 @@ export const useDelete = () => {
       setError(null);
 
       try {
-        await axios.delete(`http://localhost:3001/data/${id}`);
+        await axios.delete(`/api/vehicles/${id}`);
         remove(id);
       } catch (err) {
         console.error("Error deleting item:", err);

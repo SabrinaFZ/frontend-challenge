@@ -24,10 +24,7 @@ export const useUpdate = (car: Car) => {
     async (e: React.FormEvent, id: string) => {
       e.preventDefault();
       try {
-        const response = await axios.put<Car>(
-          `http://localhost:3001/data/${id}`,
-          formData
-        );
+        const response = await axios.put<Car>(`/api/vehicles/${id}`, formData);
 
         update(id, response.data);
 
