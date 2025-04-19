@@ -30,7 +30,7 @@ export const useAdd = () => {
     async (e: React.FormEvent) => {
       e.preventDefault();
       try {
-        const response = await axios.post<Car>("/api/vehicles", formData);
+        const response = await axios.post<Car>("/api/cars", formData);
 
         setFormData({
           model: "",

@@ -40,7 +40,7 @@ describe("useDelete Hook", () => {
     expect(result.current.loading).toBe(false);
 
     // Assert that the API call was made
-    expect(mockedAxios.delete).toHaveBeenCalledWith("/api/vehicles/1");
+    expect(mockedAxios.delete).toHaveBeenCalledWith("/api/cars/1");
 
     // Assert that the remove function was called
     expect(mockRemove).toHaveBeenCalledWith("1");

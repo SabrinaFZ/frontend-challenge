@@ -12,7 +12,7 @@ export const useDataTable = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get<Car[]>("/api/vehicles");
+      const response = await axios.get<Car[]>("/api/cars");
       set(response.data);
     } catch (err) {
       setError(err as Error);
