@@ -67,6 +67,7 @@ export const DataTable = () => {
                   className="cursor-pointer hover:bg-muted/50 transition-colors"
                   key={car.id}
                   onClick={() => handleClick(car.id)}
+                  tabIndex={0}
                 >
                   <TableCell>{car.id}</TableCell>
                   <TableCell>{car.model}</TableCell>
