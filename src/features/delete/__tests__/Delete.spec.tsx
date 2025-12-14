@@ -20,13 +20,13 @@ describe("Delete Component", () => {
   });
 
   it("renders the Delete component", () => {
-    render(<Delete id="1" />);
+    render(<Delete id="1" model="" />);
 
     expect(screen.getByRole("button", { name: /delete/i })).toBeInTheDocument();
   });
 
   it("opens and closes the dialog", () => {
-    render(<Delete id="1" />);
+    render(<Delete id="1" model="" />);
 
     // Open the dialog
     fireEvent.click(screen.getByRole("button", { name: /delete/i }));
@@ -42,7 +42,7 @@ describe("Delete Component", () => {
   });
 
   it("calls deleteItem on form submission", async () => {
-    render(<Delete id="1" />);
+    render(<Delete id="1" model="" />);
 
     // Open the dialog
     fireEvent.click(screen.getByRole("button", { name: /delete/i }));
@@ -62,7 +62,7 @@ describe("Delete Component", () => {
       error: "Something went wrong. Please try again later.",
     });
 
-    render(<Delete id="1" />);
+    render(<Delete id="1" model="" />);
 
     // Open the dialog
     fireEvent.click(screen.getByRole("button", { name: /delete/i }));

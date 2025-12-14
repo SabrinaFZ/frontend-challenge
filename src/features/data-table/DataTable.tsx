@@ -82,7 +82,7 @@ export const DataTable = () => {
                     onClick={(e) => e.stopPropagation()}
                   >
                     <div className="flex justify-end gap-2">
-                      <Delete id={car.id} />
+                      <Delete id={car.id} model={car.model} />
                       <Update car={car} />
                     </div>
                   </TableCell>

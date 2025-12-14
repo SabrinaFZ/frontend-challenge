@@ -12,7 +12,7 @@ import { Trash, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useDelete } from "./useDelete";
 
-export const Delete = ({ id }: { id: string }) => {
+export const Delete = ({ id, model }: { id: string; model: string }) => {
   const { loading, error, deleteItem } = useDelete();
   const [open, setOpen] = useState(false);
 
@@ -29,7 +29,7 @@ export const Delete = ({ id }: { id: string }) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="ghost" size="icon" aria-label="Delete">
+        <Button variant="ghost" size="icon" aria-label={`Delete ${model}`}>
           <Trash className="h-4 w-4" />
         </Button>
       </DialogTrigger>
