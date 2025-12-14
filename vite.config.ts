@@ -5,7 +5,6 @@ import tailwindcss from "@tailwindcss/vite";
 import { configDefaults } from "vitest/config";
 // add plugin for code coverage
 import istanbul from "vite-plugin-istanbul";
-import { removeMockServiceWorker } from "twd-js/vite-plugin";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -19,7 +18,6 @@ export default defineConfig({
       extension: [".ts", ".tsx"],
       requireEnv: process.env.CI ? true : false,
     }),
-    removeMockServiceWorker(),
   ],
   resolve: {
     alias: {
