@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "model": "Amarok",
+    "year": "2025",
+    "price": "28249.64",
+    "engine": "1.5L TSI",
+    "transmission": "Automatic"
+  },
+  {
+    "id": "2",
+    "model": "Arteon",
+    "year": "2023",
+    "price": "26100",
+    "engine": "1.5L TSI",
+    "transmission": "Manual"
+  }
+]
