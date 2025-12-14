@@ -25,13 +25,9 @@ jobs:
         run: |
           nohup npm run dev > vite.log 2>&1 &
           npx wait-on http://localhost:5173
-        env:
-          CI: true
 
       - name: Run Puppeteer tests (test:ci)
         run: npx twd-cli run
-        env:
-          CI: true
       
       - name: Display coverage
         run: |
