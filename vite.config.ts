@@ -16,7 +16,6 @@ export default defineConfig({
       include: "src/**/*",
       exclude: ["node_modules", "tests/"],
       extension: [".ts", ".tsx"],
-      requireEnv: process.env.CI ? true : false,
     }),
   ],
   resolve: {
