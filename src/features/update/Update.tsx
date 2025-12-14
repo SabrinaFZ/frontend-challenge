@@ -28,7 +28,7 @@ export const Update = ({ car }: { car: Car }) => {
     <>
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="ghost" size="icon" aria-label="Edit">
+          <Button variant="ghost" size="icon" aria-label={`Edit ${car.model}`}>
             <Edit className="h-4 w-4" />
           </Button>
         </DialogTrigger>
