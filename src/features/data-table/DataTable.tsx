@@ -35,7 +35,13 @@ export const DataTable = () => {
 
   return (
     <>
-      <div className="mb-6 flex flex-col sm:flex-row gap-4">
+      <div className="mb-5">
+        <h2 className="text-xl font-semibold text-[#001e50]">Car Inventory</h2>
+        <p className="text-sm text-muted-foreground mt-0.5">
+          Manage and browse your fleet
+        </p>
+      </div>
+      <div className="mb-5 flex flex-col sm:flex-row gap-3">
         <Add />
         <Search />
       </div>
@@ -43,36 +49,42 @@ export const DataTable = () => {
         {filteredData?.length > 0 ? (
           <Table>
             <TableHeader>
-              <TableRow>
-                <TableHead>Id</TableHead>
-                <TableHead>
+              <TableRow className="hover:bg-transparent">
+                <TableHead className="text-[11px] font-semibold tracking-widest uppercase text-muted-foreground">
+                  Id
+                </TableHead>
+                <TableHead className="text-[11px] font-semibold tracking-widest uppercase text-muted-foreground">
                   <Sort field="model" label="Model" />
                 </TableHead>
-                <TableHead>
+                <TableHead className="text-[11px] font-semibold tracking-widest uppercase text-muted-foreground">
                   <Sort field="year" label="Year" />
                 </TableHead>
-                <TableHead>
+                <TableHead className="text-[11px] font-semibold tracking-widest uppercase text-muted-foreground">
                   <Sort field="price" label="Price" />
                 </TableHead>
-                <TableHead>
+                <TableHead className="text-[11px] font-semibold tracking-widest uppercase text-muted-foreground">
                   <Sort field="engine" label="Engine" />
                 </TableHead>
-                <TableHead>
+                <TableHead className="text-[11px] font-semibold tracking-widest uppercase text-muted-foreground">
                   <Sort field="transmission" label="Transmission" />
                 </TableHead>
-                <TableHead className="text-right">Actions</TableHead>
+                <TableHead className="text-right text-[11px] font-semibold tracking-widest uppercase text-muted-foreground">
+                  Actions
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {filteredData.map((car) => (
                 <TableRow
-                  className="cursor-pointer hover:bg-muted/50 transition-colors"
+                  className="cursor-pointer hover:bg-muted/50 transition-colors border-l-2 border-l-transparent hover:border-l-[#6091c3]"
                   key={car.id}
                   onClick={() => handleClick(car.id)}
                   tabIndex={0}
                 >
-                  <TableCell>{car.id}</TableCell>
-                  <TableCell>{car.model}</TableCell>
+                  <TableCell className="text-muted-foreground text-sm">
+                    {car.id}
+                  </TableCell>
+                  <TableCell className="font-medium">{car.model}</TableCell>
                   <TableCell>{car.year}</TableCell>
                   <TableCell>{formatPrice(Number(car.price))}</TableCell>
                   <TableCell>{car.engine}</TableCell>
@@ -91,7 +103,7 @@ export const DataTable = () => {
             </TableBody>
           </Table>
         ) : (
-          <div className="p-4 text-center">
+          <div className="p-8 text-center">
             <p className="text-sm text-muted-foreground">No results found</p>
           </div>
         )}
