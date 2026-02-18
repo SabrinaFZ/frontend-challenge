@@ -9,6 +9,8 @@ import { Loading } from "./components/common/Loading.tsx";
 const App = lazy(() => import("./pages/App.tsx"));
 const Details = lazy(() => import("./pages/Details.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
+const Workshops = lazy(() => import("./pages/Workshops.tsx"));
+const WorkshopDetail = lazy(() => import("./pages/WorkshopDetail.tsx"));
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -23,6 +25,10 @@ createRoot(document.getElementById("root")!).render(
                 <Route path=":id">
                   <Route index element={<Details />} />
                 </Route>
+              </Route>
+              <Route path="workshops">
+                <Route index element={<Workshops />} />
+                <Route path=":id" element={<WorkshopDetail />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Route>

@@ -1,4 +1,36 @@
 {
+  "workshops": [
+    {
+      "id": "1",
+      "name": "VW Center Berlin",
+      "location": "Berlin, Germany",
+      "phone": "+49 30 1234567"
+    },
+    {
+      "id": "2",
+      "name": "Autohaus München",
+      "location": "Munich, Germany",
+      "phone": "+49 89 9876543"
+    },
+    {
+      "id": "3",
+      "name": "VW Service Hamburg",
+      "location": "Hamburg, Germany",
+      "phone": "+49 40 5551234"
+    },
+    {
+      "id": "4",
+      "name": "Volkswagen Frankfurt",
+      "location": "Frankfurt, Germany",
+      "phone": "+49 69 3334444"
+    },
+    {
+      "id": "5",
+      "name": "VW Werkstatt Cologne",
+      "location": "Cologne, Germany",
+      "phone": "+49 221 7778888"
+    }
+  ],
   "cars": [
     {
       "id": "1",
