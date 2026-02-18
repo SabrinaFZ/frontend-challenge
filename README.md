@@ -2,126 +2,111 @@
 
 ## Project Overview
 
-This project is a car inventory management application built with React, TypeScript, and Vite. It allows users to manage car data with features like sorting, searching, adding, editing and deleting and view the details of a car.
+A Volkswagen fleet management application built with React, TypeScript, and Vite. It covers two resources:
+
+- **Cars** — full CRUD: list, search, sort, add, edit, delete, and detail view.
+- **Workshops** — read-only: list and detail view of authorized service centers.
 
 ![Car Inventory Application Screenshot](https://i2.paste.pics/ff26ff3f739729b38566b8422d87573b.png?trs=69d13b3b092b22161d69516e322efd6ec959a6beced76d2c72ce340e6036c94b&rand=yYPdxjrmCz)
 
 ---
 
-## Execution
+## Getting Started
 
 1. Install dependencies:
    ```sh
    npm install
    ```
-2. Start the development server (This runs both frontend + local server):
+2. Start the development server (Vite frontend + json-server on port 3001):
    ```sh
    npm run dev:server
    ```
 3. Run tests:
    ```sh
-   npm run test
+   npm test
+   ```
+4. Run a single test file:
+   ```sh
+   npx vitest run src/features/add/__tests__/useAdd.spec.tsx
    ```
 
 ---
 
-## Technical Documentation
+## Technologies
 
-### Technologies Used
-
-- **React**: For building the user interface.
-- **Vite**: For fast development and build tooling.
-- **Tailwind CSS**: For styling the application with utility-first CSS classes, enabling rapid UI development and consistent design.
-- **json-server**: For simulating a backend API in local environment.
-- **Vitest**: For testing.
-- **Shadcn**: UI library used for building accessible and customizable UI components. It provides a set of pre-designed components that are easy to integrate and extend.
-
-### Technical Decisions
-
-1. **State Management**:
-
-   - Used a custom `AppContext` for managing global state. This approach ensures a clean separation of concerns and makes the state accessible across the application without prop drilling. Leveraged React's Context API for lightweight state management, avoiding the need for external libraries like Redux for this project.
-
-2. **Testing**:
-
-   - Unit tests for hooks and components using Vitest and React Testing Library.
-
-3. **Project Structure**:
-   - This structure ensures a clear separation of concerns, making the codebase easier to navigate, maintain, and extend
-   - **`public/`**: Contains static assets.
-   - **`src/`**: The main source code of the application.
-     - **`components/`**: Reusable UI components, divided into `common` (shared components like Layout) and `ui` (specific UI elements like buttons and inputs added by shadcn).
-     - **`context/`**: Contains the setup for global state management using React Context API.
-     - **`features/`**: Feature-specific modules, each encapsulating logic, components, and hooks for a specific functionality (e.g., search, add, update, delete).
-     - **`pages/`**: Contains the main application pages, such as `App` for listing cars and `Details` for viewing car details.
-     - **`types/`**: TypeScript type definitions.
-     - **`utils/`**: Utility functions for common tasks.
-     - **`App.tsx`**: The main application component that serves as the root of the React app.
-     - **`main.tsx`**: The entry point for the React application, where the app is rendered.
-   - **`functions/`**: Contains Cloudflare Workers for backend API logic, including mock data and API endpoints.
-   - **`data/`**: Stores the local database used by `json-server` to simulate a backend.
+| Tool | Purpose |
+|------|---------|
+| React 19 + TypeScript | UI and type safety |
+| Vite | Dev server and build tooling |
+| React Router v7 | Client-side routing with lazy-loaded pages |
+| Tailwind CSS v4 | Utility-first styling |
+| shadcn/ui | Accessible component primitives (Table, Card, Dialog, etc.) |
+| Barlow + DM Sans | Typography — loaded from Google Fonts |
+| Axios | HTTP client |
+| json-server | Local mock API (reads `data/db.json`) |
+| Cloudflare Pages + Workers | Production hosting and API (`functions/api/`) |
+| Vitest + React Testing Library | Unit tests |
+| GitHub Actions | CI — runs tests on push/PR to `main` |
 
 ---
 
-## AI Tool Usage Documentation
+## Architecture
 
-### Tools Used
+### State management
 
-- **GitHub Copilot** and **ChatGPT**: Used in generating the structure of the project, configuration files, repetitive patterns and debugging.
-- **v0**: Served as a reference for the initial design and layout of the application, helping to establish a foundation for the user interface.
+Car data lives in a global `AppContext` (see `src/context/`). The context exposes `add`, `remove`, `update`, `filter`, `sort`, and `get` — all car features read and write through it.
+
+Workshop data is **local state only**: the workshops feature is read-only and doesn't need cross-component sharing, so each hook manages its own `useState` + axios call directly.
+
+### Feature structure
+
+Each feature in `src/features/` is self-contained:
+
+```
+src/features/<feature>/
+  <Feature>.tsx          # UI component
+  use<Feature>.tsx       # Business logic hook
+  __tests__/
+    <Feature>.spec.tsx   # Component tests
+    use<Feature>.spec.tsx# Hook tests
+```
+
+Car features: `data-table`, `details`, `add`, `update`, `delete`, `search`, `sort`
+Workshop features: `workshops-table`, `workshop-details`
+
+### API
+
+In local development, Vite proxies `/api/*` to `http://localhost:3001` (json-server). In production, Cloudflare Pages routes `/api/*` to the Workers in `functions/api/`:
+
+| File | Route |
+|------|-------|
+| `functions/api/cars.js` | `GET /api/cars`, `POST /api/cars` |
+| `functions/api/cars/[id].js` | `GET /api/cars/:id`, `PUT /api/cars/:id`, `DELETE /api/cars/:id` |
+
+> Note: the production Workers use an in-memory array, so changes don't persist across deployments.
+
+### Routing
+
+All routes are lazy-loaded and nested under a shared `<Layout />`:
+
+| Path | Page |
+|------|------|
+| `/` | Car list (DataTable) |
+| `/details/:id` | Car detail |
+| `/workshops` | Workshop list |
+| `/workshops/:id` | Workshop detail |
+| `*` | 404 Not Found |
 
 ---
 
-## Performance Optimizations
+## Performance
 
-- **Code Splitting**: Reduced initial load time by lazy-loading routes.
-- **Memoization**: Prevented unnecessary re-renders in components using `useCallback`.
-- **Debouncing**: Improved search performance by implementing a debounce mechanism in the `Search` component. This ensures that the search function is not triggered on every keystroke but only after the user has stopped typing for a specified duration. This enhances the user experience by preventing unnecessary re-renders and network requests.
-- Used **Lighthouse** for testing performance.
-
----
-
-## Accessibility Features
-
-- ARIA roles and labels are added to interactive elements.
-- Keyboard navigation is supported for forms, buttons, table rows.
-- Tested using tools with Lighthouse.
-
----
-
-## Self-Review and Refactoring
-
-- **Issues Found**:.
-  - Identified gaps in error handling for some API calls. Added proper error messages and fallback mechanisms to ensure a smoother user experience in case of failures.
-  - Encountered 404 errors with Cloudflare functions after deplyment. Investigated and resolved deployment configuration issues to ensure proper routing and API functionality.
-  - Observed unnecessary re-renders in the application when modifying data in `json-server`.
-- **Improvements**:
-  - Restructured project files and folders to enhance readability and maintainability. Grouped related components, hooks, and utilities into dedicated directories. Updated import paths accordingly to reflect the new structure.
-  - Improved code comments and documentation to make the codebase easier to understand.
-  - Enhanced naming conventions for variables and functions to better reflect their purpose and improve code clarity.
-  - Removed unused code and dependencies.
-  - Added error boundaries for better error handling.
-
----
-
-## CI/CD
-
-### Tools Used
-
-- GitHub Actions for automated unit testing.
-
----
-
-## Deployment
-
-The application is deployed using **Cloudflare Pages**. To simulate the backend, a `/functions` folder has been created to handle API requests using Cloudflare Workers. This setup allows the frontend and backend to be hosted together seamlessly.
-
-### Tools Used
-
-- Cloudflare Pipeline for deployment.
+- **Code splitting**: all pages are `lazy()`-loaded with a `<Suspense>` fallback.
+- **Memoization**: hooks use `useCallback` to prevent unnecessary re-renders.
+- **Debouncing**: the search input debounces at 300 ms before filtering.
 
 ---
 
 ## Author
 
-**Name**: Sabrina Fernández Zambrano
+**Sabrina Fernández Zambrano**
