@@ -19,14 +19,15 @@ export default defineConfig({
     coverage: {
       exclude: [
         ...coverageConfigDefaults.exclude,
+        // Vitest's defaults catch vite.config.ts and vitest.workspace.ts,
+        // but not custom-named configs like vitest.unit-msw.config.ts.
+        "**/*.config.*",
+        // Cloudflare Pages Functions — deployed separately, not part of
+        // the React app under test.
         "functions/**",
-        "src/main.tsx",
-        "src/vite-env.d.ts",
-        "src/components/ui/**",
-        "src/lib/**",
-        "src/pages/**",
+        // Test infrastructure (handlers, server, fixtures, setup, test-utils).
+        // Spec files are already excluded by the default test glob.
         "src/tests/**",
-        "src/types/**",
       ],
     },
   },
