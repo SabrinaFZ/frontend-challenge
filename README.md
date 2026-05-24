@@ -107,6 +107,31 @@ All routes are lazy-loaded and nested under a shared `<Layout />`:
 
 ---
 
+## Testing approaches showcase (branch `feat/demo-twd`)
+
+This branch is a side-by-side comparison of three testing approaches against the same React app. Each suite has its own folder, vitest/runner config, and npm script so they can be run and inspected independently.
+
+| Approach | Location | Runner | npm script |
+|---|---|---|---|
+| Vitest + axios mocks (hook-mocked component tests) | `src/tests/unit-mocks-axios/` | `vitest` | `npm run test:unit-mocks-axios` |
+| Vitest + MSW (real components + real `AppContext` + intercepted HTTP) | `src/tests/unit-msw/` | `vitest` | `npm run test:unit-msw` |
+| TWD flow tests (real browser via twd-relay) | `src/twd-tests/` | `twd-cli` | `npm run test:ci` |
+
+`npm test` runs the two Vitest suites in parallel; the TWD suite runs via `npm run test:ci` (needs `npm run dev:ci` already running in another terminal) or in CI via `.github/workflows/twd-tests.yml`.
+
+### Demo checkpoints
+
+Two tags mark the points worth walking through when explaining the setup:
+
+| Tag | What it shows |
+|---|---|
+| `01-setup-twd` | TWD installed for the first time — `twd-js` + `twd-relay` added as devDeps, `twd()` + `twdRemote()` registered in `vite.config.ts`, `public/mock-sw.js` initialised, `.claude/twd-patterns.md` written, scaffold smoke test at `src/twd-tests/hello.twd.test.ts`. The entry file (`src/main.tsx`) is intentionally untouched — both plugins inject what they need at dev-server time. |
+| `02-solution-complete` | Full state — six TWD flow files covering car CRUD + workshops (`src/twd-tests/*.twd.test.ts`), `twd-cli` + `vite-plugin-istanbul` + `nyc` for CI, `twd.config.json`, and `.github/workflows/twd-tests.yml` running the BRIKEV/twd-cli composite action with coverage. |
+
+Jump to either point with `git checkout <tag>` (and `git checkout feat/demo-twd` to come back).
+
+---
+
 ## Author
 
 **Sabrina Fernández Zambrano**
