@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { describe, it, expect, afterEach, vi, beforeEach, Mock } from "vitest";
-import { useDataTable } from "../useDataTable";
+import { useDataTable } from "@/features/data-table/useDataTable";
 import axios from "axios";
 import { useAppContext } from "@/context/useAppContext";
 

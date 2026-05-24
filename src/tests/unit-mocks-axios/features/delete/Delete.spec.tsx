@@ -1,10 +1,10 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach, Mock } from "vitest";
-import { Delete } from "../Delete";
-import { useDelete } from "../useDelete";
+import { Delete } from "@/features/delete/Delete";
+import { useDelete } from "@/features/delete/useDelete";
 
 // Mock the `useDelete` hook
-vi.mock("../useDelete", () => ({
+vi.mock("@/features/delete/useDelete", () => ({
   useDelete: vi.fn(),
 }));
 

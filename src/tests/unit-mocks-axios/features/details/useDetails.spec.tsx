@@ -1,7 +1,7 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import axios from "axios";
-import { useDetails } from "../useDetails";
+import { useDetails } from "@/features/details/useDetails";
 import { Car } from "@/types/car";
 
 // Mocks

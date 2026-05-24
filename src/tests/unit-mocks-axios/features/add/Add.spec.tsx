@@ -1,10 +1,10 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach, afterEach, Mock } from "vitest";
-import { Add } from "../Add";
-import { useAdd } from "../useAdd";
+import { Add } from "@/features/add/Add";
+import { useAdd } from "@/features/add/useAdd";
 
 // Mocks
-vi.mock("../useAdd", () => ({
+vi.mock("@/features/add/useAdd", () => ({
   useAdd: vi.fn(),
 }));
 

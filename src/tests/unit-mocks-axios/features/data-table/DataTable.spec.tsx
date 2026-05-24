@@ -1,33 +1,33 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { vi, describe, expect, it, afterEach, beforeEach } from "vitest";
 import { MemoryRouter } from "react-router";
-import { DataTable } from "../DataTable";
+import { DataTable } from "@/features/data-table/DataTable";
 import { Car } from "@/types/car";
-import * as useDataTableModule from "../useDataTable";
+import * as useDataTableModule from "@/features/data-table/useDataTable";
 
 // Mocks
-vi.mock("../useDataTable.tsx");
-vi.mock("../../add/Add.tsx", () => ({
+vi.mock("@/features/data-table/useDataTable");
+vi.mock("@/features/add/Add", () => ({
   Add: () => <div data-testid="mock-add">Mock Add Component</div>,
 }));
-vi.mock("../../search/Search.tsx", () => ({
+vi.mock("@/features/search/Search", () => ({
   Search: () => <div data-testid="mock-search">Mock Search Component</div>,
 }));
-vi.mock("../../delete/Delete.tsx", () => ({
+vi.mock("@/features/delete/Delete", () => ({
   Delete: () => <div data-testid="mock-delete">Mock Delete Component</div>,
 }));
-vi.mock("../../update/Update.tsx", () => ({
+vi.mock("@/features/update/Update", () => ({
   Update: () => <div data-testid="mock-update">Mock Update Component</div>,
 }));
-vi.mock("../../sort/Sort.tsx", () => ({
+vi.mock("@/features/sort/Sort", () => ({
   Sort: ({ field, label }: { field: string; label: string }) => (
     <div data-testid={`mock-sort-${field}`}>{label}</div>
   ),
 }));
-vi.mock("../../../components/common/Loading.tsx", () => ({
+vi.mock("@/components/common/Loading", () => ({
   Loading: () => <div data-testid="mock-loading">Mock Loading Component</div>,
 }));
-vi.mock("../../../components/common/Error.tsx", () => ({
+vi.mock("@/components/common/Error", () => ({
   Error: () => <div data-testid="mock-error">Mock Error Component</div>,
 }));
 

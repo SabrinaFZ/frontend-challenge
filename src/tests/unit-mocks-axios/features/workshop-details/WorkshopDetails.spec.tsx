@@ -1,16 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, vi, expect, Mock } from "vitest";
-import { WorkshopDetails } from "../WorkshopDetails";
-import { useWorkshopDetails } from "../useWorkshopDetails";
+import { WorkshopDetails } from "@/features/workshop-details/WorkshopDetails";
+import { useWorkshopDetails } from "@/features/workshop-details/useWorkshopDetails";
 
 // Mocks
-vi.mock("../useWorkshopDetails", () => ({
+vi.mock("@/features/workshop-details/useWorkshopDetails", () => ({
   useWorkshopDetails: vi.fn(),
 }));
-vi.mock("../../../components/common/Loading.tsx", () => ({
+vi.mock("@/components/common/Loading", () => ({
   Loading: () => <div data-testid="mock-loading">Mock Loading Component</div>,
 }));
-vi.mock("../../../components/common/Error.tsx", () => ({
+vi.mock("@/components/common/Error", () => ({
   Error: () => <div data-testid="mock-error">Mock Error Component</div>,
 }));
 

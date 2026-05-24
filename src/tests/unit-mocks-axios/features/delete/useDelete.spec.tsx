@@ -1,5 +1,5 @@
 import { renderHook, act } from "@testing-library/react";
-import { useDelete } from "../useDelete";
+import { useDelete } from "@/features/delete/useDelete";
 import { useAppContext } from "@/context/useAppContext";
 import axios from "axios";
 import { afterEach, beforeEach, describe, expect, it, vi, Mock } from "vitest";

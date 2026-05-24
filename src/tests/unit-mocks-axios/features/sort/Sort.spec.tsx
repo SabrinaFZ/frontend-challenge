@@ -1,10 +1,10 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach, Mock } from "vitest";
-import { Sort } from "../Sort";
-import { useSort } from "../useSort";
+import { Sort } from "@/features/sort/Sort";
+import { useSort } from "@/features/sort/useSort";
 
 // Mocks
-vi.mock("../useSort", () => ({
+vi.mock("@/features/sort/useSort", () => ({
   useSort: vi.fn(),
 }));
 

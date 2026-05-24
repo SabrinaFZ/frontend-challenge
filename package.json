@@ -10,8 +10,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "db": "json-server --watch data/db.json --port 3001",
-    "test": "vitest",
-    "test:watch": "vitest --watch"
+    "test": "npm run test:unit-mocks-axios",
+    "test:unit-mocks-axios": "vitest run --config vitest.unit-mocks-axios.config.ts",
+    "test:watch": "vitest --watch --config vitest.unit-mocks-axios.config.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",

@@ -1,10 +1,10 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach, Mock } from "vitest";
-import { Search } from "../Search";
-import { useSearch } from "../useSearch";
+import { Search } from "@/features/search/Search";
+import { useSearch } from "@/features/search/useSearch";
 
 // Mocks
-vi.mock("../useSearch", () => ({
+vi.mock("@/features/search/useSearch", () => ({
   useSearch: vi.fn(),
 }));
 

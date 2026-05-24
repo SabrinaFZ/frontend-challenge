@@ -1,7 +1,7 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import axios from "axios";
-import { useWorkshopDetails } from "../useWorkshopDetails";
+import { useWorkshopDetails } from "@/features/workshop-details/useWorkshopDetails";
 import { Workshop } from "@/types/workshop";
 
 const mockedAxios = axios as unknown as {

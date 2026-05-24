@@ -1,7 +1,7 @@
 import { renderHook, act } from "@testing-library/react";
 import axios from "axios";
 import { describe, it, expect, vi, beforeEach, afterEach, Mock } from "vitest";
-import { useUpdate } from "../useUpdate";
+import { useUpdate } from "@/features/update/useUpdate";
 import { useAppContext } from "@/context/useAppContext";
 import { Car } from "@/types/car";
 

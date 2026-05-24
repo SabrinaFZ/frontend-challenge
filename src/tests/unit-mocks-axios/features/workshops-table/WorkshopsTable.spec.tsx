@@ -1,16 +1,16 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { vi, describe, expect, it, afterEach, beforeEach } from "vitest";
 import { MemoryRouter } from "react-router";
-import { WorkshopsTable } from "../WorkshopsTable";
+import { WorkshopsTable } from "@/features/workshops-table/WorkshopsTable";
 import { Workshop } from "@/types/workshop";
-import * as useWorkshopsTableModule from "../useWorkshopsTable";
+import * as useWorkshopsTableModule from "@/features/workshops-table/useWorkshopsTable";
 
 // Mocks
-vi.mock("../useWorkshopsTable");
-vi.mock("../../../components/common/Loading.tsx", () => ({
+vi.mock("@/features/workshops-table/useWorkshopsTable");
+vi.mock("@/components/common/Loading", () => ({
   Loading: () => <div data-testid="mock-loading">Mock Loading Component</div>,
 }));
-vi.mock("../../../components/common/Error.tsx", () => ({
+vi.mock("@/components/common/Error", () => ({
   Error: () => <div data-testid="mock-error">Mock Error Component</div>,
 }));
 

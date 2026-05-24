@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatPrice } from "../formatPrice";
+import { formatPrice } from "@/utils/formatPrice";
 
 describe("formatPrice", () => {
   it("should format a number as a price in EUR", () => {

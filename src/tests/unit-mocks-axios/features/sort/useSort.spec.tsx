@@ -1,6 +1,6 @@
 import { renderHook, act } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach, afterEach, Mock } from "vitest";
-import { useSort } from "../useSort";
+import { useSort } from "@/features/sort/useSort";
 import { useAppContext } from "@/context/useAppContext";
 
 // Mock the context

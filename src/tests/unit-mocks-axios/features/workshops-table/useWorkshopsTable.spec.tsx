@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { describe, it, expect, afterEach, vi, beforeEach } from "vitest";
-import { useWorkshopsTable } from "../useWorkshopsTable";
+import { useWorkshopsTable } from "@/features/workshops-table/useWorkshopsTable";
 import axios from "axios";
 
 const mockedAxios = axios as unknown as {

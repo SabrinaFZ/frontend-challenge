@@ -1,11 +1,11 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach, Mock } from "vitest";
-import { Update } from "../Update";
-import { useUpdate } from "../useUpdate";
+import { Update } from "@/features/update/Update";
+import { useUpdate } from "@/features/update/useUpdate";
 import { Car } from "@/types/car";
 
 // Mock the `useUpdate` hook
-vi.mock("../useUpdate", () => ({
+vi.mock("@/features/update/useUpdate", () => ({
   useUpdate: vi.fn(),
 }));
 
