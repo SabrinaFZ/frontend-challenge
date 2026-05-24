@@ -1,12 +1,23 @@
 import path from "path";
-import { defineConfig } from "vite";
+import { defineConfig, type PluginOption } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
+import { twd } from "twd-js/vite-plugin";
+import { twdRemote } from "twd-relay/vite";
 import { configDefaults, coverageConfigDefaults } from "vitest/config";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    twd({
+      testFilePattern: "/**/*.twd.test.{ts,tsx}",
+      open: true,
+      position: "left",
+    }),
+    twdRemote() as PluginOption,
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
